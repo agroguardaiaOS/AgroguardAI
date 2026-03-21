@@ -1,0 +1,69 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── SIZES ─────────────────────────────────────────────── */
+.sm { font-size: 9px;  padding: 3px 8px;  }
+.md { font-size: 10px; padding: 4px 10px; }
+
+/* ── VARIANTS ──────────────────────────────────────────── */
+.green {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid var(--green-bdr);
+}
+
+.amber {
+  background: rgba(255,179,0,0.10);
+  color: var(--amber);
+  border: 1px solid rgba(255,179,0,0.22);
+}
+
+.red {
+  background: rgba(255,68,68,0.10);
+  color: var(--danger);
+  border: 1px solid rgba(255,68,68,0.22);
+}
+
+.blue {
+  background: rgba(79,195,247,0.10);
+  color: var(--info);
+  border: 1px solid rgba(79,195,247,0.22);
+}
+
+.mute {
+  background: rgba(255,255,255,0.05);
+  color: var(--sub);
+  border: 1px solid var(--bdr);
+}
+
+.white {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ── DOT ───────────────────────────────────────────────── */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.pulse {
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%      { opacity: 0.4; transform: scale(0.65); }
+}
