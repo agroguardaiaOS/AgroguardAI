@@ -1,0 +1,114 @@
+/* ─────────────────────────────────────────
+   RESET
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100svh;
+  overscroll-behavior: none;
+}
+
+button  { cursor: pointer; font-family: inherit; border: none; background: none; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+img     { display: block; max-width: 100%; }
+a       { color: inherit; text-decoration: none; }
+ul      { list-style: none; }
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS
+───────────────────────────────────────── */
+:root {
+  --bg:  #0A0F0A;
+  --bg1: #0D140D;
+  --bg2: #111811;
+  --bg3: #162016;
+
+  --green:      #00C853;
+  --green-lite: #14F066;
+  --green-dim:  rgba(0,200,83,0.10);
+  --green-bdr:  rgba(0,200,83,0.20);
+  --green-glow: 0 8px 28px rgba(0,200,83,0.30);
+
+  --txt:  #EDF2ED;
+  --sub:  #7A9A7A;
+  --mute: #3A533A;
+
+  --danger: #FF4444;
+  --amber:  #FFB300;
+  --info:   #4FC3F7;
+
+  --bdr:       rgba(255,255,255,0.07);
+  --bdr-green: rgba(0,200,83,0.20);
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.55);
+
+  --ease:   cubic-bezier(0.22,1,0.36,1);
+  --t-fast: 0.15s;
+  --t-mid:  0.25s;
+  --t-slow: 0.4s;
+}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%     { opacity:0.4; transform:scale(0.8); }
+}
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slide-up {
+  from { transform:translateY(100%); opacity:0; }
+  to   { transform:translateY(0); opacity:1; }
+}
+@keyframes scan {
+  0%,100% { top:0; }
+  50%     { top:calc(100% - 2px); }
+}
+@keyframes bounce {
+  0%,60%,100% { transform:translateY(0); }
+  30%         { transform:translateY(-6px); }
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────── */
+::-webkit-scrollbar       { width:4px; height:4px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--mute); border-radius:4px; }
+
+/* ─────────────────────────────────────────
+   APP SHELL
+───────────────────────────────────────── */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+         }
