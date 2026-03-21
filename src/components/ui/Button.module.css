@@ -1,0 +1,173 @@
+/* ── BASE ──────────────────────────────────────────────── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transition:
+    background   0.18s cubic-bezier(0.22,1,0.36,1),
+    transform    0.18s cubic-bezier(0.22,1,0.36,1),
+    box-shadow   0.18s cubic-bezier(0.22,1,0.36,1),
+    border-color 0.18s cubic-bezier(0.22,1,0.36,1),
+    opacity      0.18s;
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.10) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  transition: background-position 0.55s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.btn:hover .shine { background-position: -200% 0; }
+
+@keyframes ripple { to { transform: scale(2.5); opacity: 0; } }
+
+.btn:active:not(:disabled) { transform: scale(0.96); }
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+/* ── VARIANTS ──────────────────────────────────────────── */
+.primary {
+  background: linear-gradient(135deg, #00C853 0%, #00E676 100%);
+  color: #001a08;
+  box-shadow:
+    0 4px 16px rgba(0,200,83,0.30),
+    0 1px 0 rgba(255,255,255,0.15) inset;
+}
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00E676 0%, #69F0AE 100%);
+  box-shadow:
+    0 8px 28px rgba(0,200,83,0.45),
+    0 1px 0 rgba(255,255,255,0.20) inset;
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--sub);
+  border: 1.5px solid var(--bdr);
+}
+.ghost:hover:not(:disabled) {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.18);
+  color: var(--txt);
+  transform: translateY(-1px);
+}
+
+.green-outline {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1.5px solid var(--green-bdr);
+}
+.green-outline:hover:not(:disabled) {
+  background: rgba(0,200,83,0.18);
+  border-color: var(--green);
+  box-shadow: 0 4px 16px rgba(0,200,83,0.20);
+  transform: translateY(-1px);
+}
+
+.danger {
+  background: rgba(255,68,68,0.10);
+  color: var(--danger);
+  border: 1.5px solid rgba(255,68,68,0.25);
+}
+.danger:hover:not(:disabled) {
+  background: rgba(255,68,68,0.20);
+  box-shadow: 0 4px 16px rgba(255,68,68,0.22);
+  transform: translateY(-1px);
+}
+
+.glass {
+  background: rgba(255,255,255,0.06);
+  color: var(--txt);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.glass:hover:not(:disabled) {
+  background: rgba(255,255,255,0.11);
+  border-color: var(--green-bdr);
+  transform: translateY(-1px);
+}
+
+/* ── SIZES ─────────────────────────────────────────────── */
+.sm {
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  gap: 6px;
+}
+.md {
+  font-size: 14px;
+  padding: 12px 24px;
+}
+.lg {
+  font-size: 15px;
+  padding: 15px 32px;
+  border-radius: var(--r-lg);
+}
+.xl {
+  font-size: 16px;
+  padding: 18px 40px;
+  border-radius: var(--r-lg);
+  letter-spacing: 0.04em;
+}
+
+.full { width: 100%; }
+
+/* ── CONTENT ───────────────────────────────────────────── */
+.iconLeft  { font-size: 1.2em; line-height: 1; flex-shrink: 0; }
+.iconRight { font-size: 1.2em; line-height: 1; flex-shrink: 0; opacity: 0.75; }
+.label     { position: relative; z-index: 1; }
+
+/* ── LOADING ───────────────────────────────────────────── */
+.busy { pointer-events: none; }
+
+.spinnerWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+.spinnerLabel { font-size: 0.9em; opacity: 0.8; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── PULSE ─────────────────────────────────────────────── */
+.pulse { animation: pulsate 2s ease infinite; }
+
+@keyframes pulsate {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0,200,83,0.30); }
+  50%      { box-shadow: 0 4px 32px rgba(0,200,83,0.65); }
+                                    }
