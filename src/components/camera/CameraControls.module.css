@@ -1,0 +1,116 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 36px 28px;
+  background: var(--bg1);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── SIDE BUTTONS ──────────────────────────────────────── */
+.side {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  background: var(--bg2);
+  border: 1px solid var(--bdr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sub);
+  transition: all var(--t-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.side:hover {
+  background: var(--bg3);
+  border-color: rgba(255,255,255,0.14);
+  color: var(--txt);
+}
+
+.side:active { transform: scale(0.93); }
+
+/* ── CAPTURE BUTTON ────────────────────────────────────── */
+.capture {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--t-fast);
+}
+
+.capture:active:not(:disabled) { transform: scale(0.92); }
+.capture:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Outer ring */
+.captureRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--green);
+  box-shadow:
+    0 0 0 0 rgba(0,200,83,0.4),
+    inset 0 0 0 0 rgba(0,200,83,0.1);
+  transition: all 0.25s;
+}
+
+.capture:hover:not(:disabled) .captureRing {
+  box-shadow:
+    0 0 0 6px rgba(0,200,83,0.12),
+    inset 0 0 0 2px rgba(0,200,83,0.08);
+}
+
+/* Second pulsing ring */
+.captureRing2 {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,200,83,0.25);
+  animation: ringPulse 2.5s ease infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1);    }
+  50%      { opacity: 0;   transform: scale(1.12); }
+}
+
+/* Inner circle */
+.captureInner {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00C853, #00E676);
+  box-shadow: 0 4px 20px rgba(0,200,83,0.45);
+  transition: all var(--t-fast);
+}
+
+.capture:hover:not(:disabled) .captureInner {
+  background: linear-gradient(135deg, #00E676, #69F0AE);
+  box-shadow: 0 6px 28px rgba(0,200,83,0.60);
+  transform: scale(1.05);
+}
+
+/* Analysing state */
+.analysing .captureRing {
+  border-color: rgba(0,200,83,0.35);
+  animation: rotateBorder 1.2s linear infinite;
+}
+
+@keyframes rotateBorder {
+  to { transform: rotate(360deg); }
+}
+
+.ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid rgba(0,200,83,0.25);
+  border-top-color: var(--green);
+  animation: spin 0.75s linear infinite;
+}
