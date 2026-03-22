@@ -58,14 +58,14 @@ export type SeverityLevel   = 'low' | 'medium' | 'high'
 export type ConfidenceLevel = 'High' | 'Medium' | 'Low'
 
 export interface DiagnosisResult {
-  disease:      string
-  confidence:   ConfidenceLevel
-  cause:        string
-  severity:     SeverityLevel
-  treatment:    string[]
-  prevention:   string[]
+  disease:       string
+  confidence:    ConfidenceLevel
+  cause:         string
+  severity:      SeverityLevel
+  treatment:     string[]
+  prevention:    string[]
   affectedPart?: string
-  crops?:       string[]
+  crops?:        string[]
 }
 
 // ─────────────────────────────────────────
@@ -107,7 +107,9 @@ export interface VoiceState {
 // APP
 // ─────────────────────────────────────────
 
-export type AppPage = 'home' | 'live' | 'chat' | 'settings'
+// Pages: Live → Chat → Voice → Home (dashboard)
+// Settings lives in Header top right — not in bottom nav
+export type AppPage = 'home' | 'live' | 'chat' | 'voice' | 'settings'
 
 // ─────────────────────────────────────────
 // STORAGE
@@ -121,4 +123,4 @@ export interface StoredHistory {
   lang:      LanguageCode
   text:      string
   imageUrl?: string
-  }
+}
