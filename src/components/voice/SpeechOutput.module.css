@@ -1,0 +1,73 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(79,195,247,0.07);
+  border: 1px solid rgba(79,195,247,0.20);
+  border-radius: var(--r-md);
+  padding: 10px 14px;
+  margin: 0 16px 8px;
+  animation: fade-up 0.25s ease both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── WAVEFORM ──────────────────────────────────────────── */
+.waves {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.wave {
+  display: block;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--info);
+  animation: wave 0.7s ease-in-out infinite alternate;
+}
+
+.wave:nth-child(1) { height: 10px; }
+.wave:nth-child(2) { height: 18px; }
+.wave:nth-child(3) { height: 24px; }
+.wave:nth-child(4) { height: 28px; }
+.wave:nth-child(5) { height: 24px; }
+.wave:nth-child(6) { height: 18px; }
+.wave:nth-child(7) { height: 10px; }
+
+@keyframes wave {
+  to { transform: scaleY(0.3); opacity: 0.5; }
+}
+
+/* ── LABEL ─────────────────────────────────────────────── */
+.label {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--info);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── STOP ──────────────────────────────────────────────── */
+.stop {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(79,195,247,0.12);
+  border: 1px solid rgba(79,195,247,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--info);
+  flex-shrink: 0;
+  transition: all var(--t-fast);
+}
+
+.stop:hover {
+  background: rgba(79,195,247,0.22);
+}
