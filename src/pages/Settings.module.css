@@ -1,0 +1,134 @@
+.page { padding-bottom: 40px; background: var(--bg); min-height: 100svh; }
+
+/* ── SECTIONS ─────────────────────────────── */
+.section { padding: 20px 16px 0; }
+
+.sectionTitle {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--sub); margin-bottom: 12px;
+}
+
+/* ── LANGUAGE ─────────────────────────────── */
+.langGrid {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 8px;
+}
+
+.langBtn {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1.5px solid var(--bdr);
+  border-radius: var(--r-md); padding: 13px 14px;
+  text-align: left; transition: all var(--t-fast);
+  -webkit-tap-highlight-color: transparent; position: relative;
+}
+.langBtn:hover { border-color: var(--green-bdr); background: var(--bg3); }
+.langActive    { border-color: var(--green); background: var(--green-dim); }
+
+.langFlag   { font-size: 22px; flex-shrink: 0; }
+.langNative { font-size: 13px; font-weight: 600; color: var(--txt); flex: 1; }
+.langCheck  { font-size: 12px; color: var(--green); font-weight: 700; }
+
+.comingRow  { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.comingChip {
+  font-size: 12px; color: var(--mute);
+  background: var(--bg2); border: 1px solid var(--bdr);
+  border-radius: 8px; padding: 9px 14px;
+}
+
+/* ── CARD ─────────────────────────────────── */
+.card {
+  background: var(--bg2); border: 1px solid var(--bdr);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+
+/* ── ROWS ─────────────────────────────────── */
+.row {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--bdr);
+}
+.row:last-child { border-bottom: none; }
+
+.rowLabel { font-size: 13px; color: var(--sub); flex-shrink: 0; }
+
+.rowValue {
+  font-size: 13px; color: var(--txt); font-weight: 500;
+  text-align: right;
+}
+
+.rowValueGreen {
+  font-size: 13px; color: var(--green);
+  font-weight: 600; text-align: right;
+}
+
+.rowLink {
+  font-size: 12px; color: var(--green); font-weight: 500;
+  text-align: right; transition: opacity 0.2s;
+}
+.rowLink:hover { opacity: 0.75; }
+
+/* ── DATA / DANGER ────────────────────────── */
+.dataNote {
+  font-size: 13px; color: var(--sub);
+  font-weight: 300; line-height: 1.65;
+  padding: 14px 16px 0;
+}
+
+.dangerBtn {
+  width: 100%; margin-top: 12px;
+  padding: 14px 16px; border-radius: 0;
+  background: rgba(255,68,68,0.08);
+  border-top: 1px solid rgba(255,68,68,0.18);
+  color: var(--danger); font-size: 14px; font-weight: 600;
+  transition: background 0.2s;
+}
+.dangerBtn:hover:not(.dangerDisabled) { background: rgba(255,68,68,0.16); }
+.dangerDisabled { opacity: 0.4; cursor: not-allowed; }
+
+.confirmBox { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.confirmNote {
+  font-size: 13px; color: var(--sub);
+  font-weight: 300; line-height: 1.65;
+}
+.confirmNote strong { color: var(--danger); font-weight: 700; }
+
+.confirmInput {
+  width: 100%; background: var(--bg3);
+  border: 1.5px solid var(--bdr);
+  border-radius: var(--r-sm); padding: 12px 14px;
+  color: var(--txt); font-size: 14px; font-weight: 600;
+  outline: none; letter-spacing: 0.08em;
+  transition: border-color 0.2s; font-family: monospace;
+}
+.confirmInput:focus    { border-color: var(--danger); }
+.confirmReady          { border-color: var(--danger); color: var(--danger); }
+.confirmInput::placeholder { color: var(--mute); letter-spacing: 0.04em; font-weight: 400; }
+
+.confirmBtns {
+  display: flex; gap: 10px;
+}
+
+.cancelBtn {
+  flex: 1; padding: 12px;
+  border-radius: var(--r-sm); border: 1px solid var(--bdr);
+  background: var(--bg3); color: var(--sub);
+  font-size: 13px; font-weight: 600; transition: all 0.2s;
+}
+.cancelBtn:hover { border-color: rgba(255,255,255,0.14); color: var(--txt); }
+
+.dangerBtn.confirmBtns { flex: 1; margin-top: 0; border-radius: var(--r-sm); border: 1px solid rgba(255,68,68,0.25); }
+
+.clearedMsg {
+  padding: 16px; font-size: 13px;
+  color: var(--green); font-weight: 600;
+  text-align: center;
+}
+
+/* ── TAGLINE ──────────────────────────────── */
+.tagline {
+  text-align: center; padding: 32px 24px;
+  font-size: 12px; color: var(--mute);
+  font-style: italic; line-height: 1.8;
+}
