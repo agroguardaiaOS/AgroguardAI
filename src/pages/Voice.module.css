@@ -1,0 +1,63 @@
+.page { display: flex; flex-direction: column; min-height: 100svh; background: var(--bg); }
+
+/* Language bar */
+.langBar {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 20px;
+  background: var(--green-dim); border-bottom: 1px solid var(--green-bdr);
+}
+.langFlag { font-size: 18px; }
+.langName { font-size: 12px; font-weight: 600; color: var(--green); letter-spacing: 0.04em; }
+
+/* Mic area */
+.micWrap {
+  flex: 1; display: flex; align-items: center;
+  justify-content: center; padding: 32px 20px;
+  flex-direction: column; gap: 0;
+  min-height: 280px;
+}
+
+/* Thinking dots */
+.thinking {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; padding: 16px 20px;
+}
+.thinkingDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green); animation: bounce 1.2s ease infinite;
+}
+.thinkingDot:nth-child(2) { animation-delay: 0.18s; }
+.thinkingDot:nth-child(3) { animation-delay: 0.36s; }
+@keyframes bounce {
+  0%,60%,100% { transform: translateY(0);   opacity:0.5; }
+  30%         { transform: translateY(-8px); opacity:1;   }
+}
+
+/* Last exchange */
+.exchange {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 0 16px 16px;
+}
+.question, .answer {
+  background: var(--bg2); border: 1px solid var(--bdr);
+  border-radius: var(--r-md); padding: 14px 16px;
+}
+.answer { border-color: var(--green-bdr); background: var(--green-dim); }
+.exchangeLabel {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--sub); margin-bottom: 6px;
+}
+.answer .exchangeLabel { color: var(--green); }
+.exchangeText {
+  font-size: 14px; color: var(--txt); line-height: 1.7;
+  font-weight: 300; white-space: pre-wrap;
+}
+.replayBtn {
+  margin-top: 10px; font-size: 12px; font-weight: 600;
+  color: var(--green); background: none; border: none;
+  cursor: pointer; padding: 0; transition: opacity 0.2s;
+}
+.replayBtn:hover { opacity: 0.75; }
+
+/* Personality picker */
+.personalityWrap { padding: 0 16px 24px; }
