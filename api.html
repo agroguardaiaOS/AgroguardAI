@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation | AgroGuardAI</title>
+  <meta name="description" content="Build with AgroGuardAI. REST API for crop intelligence, disease diagnosis, soil analysis, and autonomous field operations.">
+  <meta name="theme-color" content="#228B22">
+  <link rel="icon" href="https://i.postimg.cc/DzWMqsHq/AgroguardAI.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="AgroGuardAI Home">
+        <span class="header__logo-icon">AG</span>
+        AgroGuardAI
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <div class="header__nav-links">
+          <a href="intelligence.html" class="header__nav-link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="header__nav-link">AgroMind</a>
+          <a href="agrorobotics.html" class="header__nav-link">AgroRobotics</a>
+          <a href="api.html" class="header__nav-link active">API</a>
+          <a href="pricing.html" class="header__nav-link">Pricing</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--secondary btn--sm">Log In</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+      <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="intelligence.html" class="mobile-menu__link">Agroguard Intelligence</a>
+    <a href="agromind.html" class="mobile-menu__link">AgroMind</a>
+    <a href="agrorobotics.html" class="mobile-menu__link">AgroRobotics</a>
+    <a href="api.html" class="mobile-menu__link">API</a>
+    <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__actions">
+      <a href="contact.html" class="btn btn--secondary">Log In</a>
+      <a href="pricing.html" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--product" style="min-height:50vh;">
+    <div class="container">
+      <div class="hero__content" style="padding:var(--space-2xl) 0;">
+        <div class="hero__label">
+          <span style="width:8px;height:8px;background:var(--tech-blue);border-radius:50%;display:inline-block;"></span>
+          Developer Platform
+        </div>
+        <h1 class="hero__title" style="font-size:var(--text-5xl);">API Documentation</h1>
+        <p class="hero__subtitle">Build agricultural intelligence into any application. RESTful API with SDKs for Python, Node.js, and cURL.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="#quickstart" class="btn btn--primary btn--lg">Quick Start</a>
+          <a href="pricing.html" class="btn btn--outline-white btn--lg">Get API Key</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Docs Content -->
+  <section class="section" style="padding-top:var(--space-3xl);">
+    <div class="container">
+      <div class="docs-layout">
+
+        <!-- Sidebar -->
+        <aside class="docs-sidebar">
+          <div class="docs-sidebar__section">
+            <div class="docs-sidebar__title">Getting Started</div>
+            <a href="#quickstart" class="docs-sidebar__link active">Quick Start</a>
+            <a href="#authentication" class="docs-sidebar__link">Authentication</a>
+            <a href="#base-url" class="docs-sidebar__link">Base URL</a>
+          </div>
+          <div class="docs-sidebar__section">
+            <div class="docs-sidebar__title">API Reference</div>
+            <a href="#models" class="docs-sidebar__link">Models</a>
+            <a href="#diagnose" class="docs-sidebar__link">Diagnose</a>
+            <a href="#chat" class="docs-sidebar__link">Chat Completions</a>
+            <a href="#vision" class="docs-sidebar__link">Vision</a>
+            <a href="#field-ops" class="docs-sidebar__link">Field Operations</a>
+          </div>
+          <div class="docs-sidebar__section">
+            <div class="docs-sidebar__title">Resources</div>
+            <a href="#rate-limits" class="docs-sidebar__link">Rate Limits</a>
+            <a href="#errors" class="docs-sidebar__link">Error Codes</a>
+            <a href="#changelog" class="docs-sidebar__link">Changelog</a>
+            <a href="#status" class="docs-sidebar__link">Status</a>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+          <!-- Quick Start -->
+          <section id="quickstart">
+            <h2 style="margin-bottom:var(--space-md);">Quick Start</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-xl);">Get your first API response in under 2 minutes. Create an account, grab your API key, and make your first call.</p>
+
+            <h3 style="margin-bottom:var(--space-md);">1. Install the SDK</h3>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">Bash</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre><span class="comment"># Python</span>
+pip install agroguard
+
+<span class="comment"># Node.js</span>
+npm install @agroguard/sdk</pre>
+            </div>
+
+            <h3 style="margin-top:var(--space-2xl);margin-bottom:var(--space-md);">2. Make your first request</h3>
+
+            <div data-tabs>
+              <div class="tabs">
+                <button class="tab active" data-tab="python">Python</button>
+                <button class="tab" data-tab="curl">cURL</button>
+                <button class="tab" data-tab="node">Node.js</button>
+              </div>
+              <div class="tab-panel active" data-panel="python">
+                <div class="code-block">
+                  <div class="code-block__header">
+                    <span class="code-block__lang">Python</span>
+                    <button class="code-block__copy">Copy</button>
+                  </div>
+                  <pre><span class="keyword">import</span> agroguard
+
+client = agroguard.Client(api_key=<span class="string">"ag-your-api-key"</span>)
+
+<span class="comment"># Simple crop question</span>
+response = client.chat.create(
+    model=<span class="string">"agro-guard-v1"</span>,
+    messages=[
+        {<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"What causes yellow leaves on maize?"</span>}
+    ]
+)
+
+<span class="keyword">print</span>(response.choices[<span class="number">0</span>].message.content)
+
+<span class="comment"># Disease diagnosis from image</span>
+diagnosis = client.vision.diagnose(
+    model=<span class="string">"agro-vision-v1"</span>,
+    image=<span class="string">"path/to/crop_photo.jpg"</span>,
+    crop=<span class="string">"maize"</span>,
+    language=<span class="string">"en"</span>
+)
+
+<span class="keyword">print</span>(diagnosis.disease)
+<span class="keyword">print</span>(diagnosis.confidence)
+<span class="keyword">print</span>(diagnosis.treatment)</pre>
+                </div>
+              </div>
+              <div class="tab-panel" data-panel="curl">
+                <div class="code-block">
+                  <div class="code-block__header">
+                    <span class="code-block__lang">cURL</span>
+                    <button class="code-block__copy">Copy</button>
+                  </div>
+                  <pre>curl https://api.agroguardai.com/v1/chat/completions \
+  -H <span class="string">"Authorization: Bearer ag-your-api-key"</span> \
+  -H <span class="string">"Content-Type: application/json"</span> \
+  -d <span class="string">'{
+    "model": "agro-guard-v1",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What causes yellow leaves on maize?"
+      }
+    ]
+  }'</span></pre>
+                </div>
+              </div>
+              <div class="tab-panel" data-panel="node">
+                <div class="code-block">
+                  <div class="code-block__header">
+                    <span class="code-block__lang">Node.js</span>
+                    <button class="code-block__copy">Copy</button>
+                  </div>
+                  <pre><span class="keyword">import</span> AgroGuard <span class="keyword">from</span> <span class="string">'@agroguard/sdk'</span>;
+
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="function">AgroGuard</span>({
+  apiKey: <span class="string">'ag-your-api-key'</span>
+});
+
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.chat.<span class="function">create</span>({
+  model: <span class="string">'agro-guard-v1'</span>,
+  messages: [
+    { role: <span class="string">'user'</span>, content: <span class="string">'What causes yellow leaves on maize?'</span> }
+  ]
+});
+
+console.<span class="function">log</span>(response.choices[<span class="number">0</span>].message.content);</pre>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Authentication -->
+          <section id="authentication" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Authentication</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">All API requests require a valid API key sent in the <code style="background:var(--bg-secondary);padding:0.15rem 0.4rem;border-radius:4px;font-family:var(--font-mono);font-size:var(--text-sm);">Authorization</code> header.</p>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">Header</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>Authorization: Bearer ag-your-api-key</pre>
+            </div>
+            <div style="background:rgba(34,139,34,0.06);border:1px solid rgba(34,139,34,0.15);border-radius:var(--radius-md);padding:var(--space-lg);margin-top:var(--space-lg);">
+              <strong style="color:var(--forest-green);">Security note:</strong> Never expose your API key in client-side code. Always make API calls from your server.
+            </div>
+          </section>
+
+          <!-- Base URL -->
+          <section id="base-url" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Base URL</h2>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">URL</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>https://api.agroguardai.com/v1</pre>
+            </div>
+          </section>
+
+          <!-- Models -->
+          <section id="models" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Models</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-xl);">AgroGuardAI offers three specialized models, each optimized for different agricultural tasks.</p>
+            <table class="spec-table">
+              <thead>
+                <tr><th>Model</th><th>Description</th><th>Context</th><th>Price (input / output)</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code style="background:var(--bg-secondary);padding:0.2rem 0.5rem;border-radius:4px;font-family:var(--font-mono);font-size:var(--text-xs);">agro-guard-v1</code></td>
+                  <td>General agricultural knowledge and Q&amp;A</td>
+                  <td>128K tokens</td>
+                  <td>$0.50 / $1.50 per 1M tokens</td>
+                </tr>
+                <tr>
+                  <td><code style="background:var(--bg-secondary);padding:0.2rem 0.5rem;border-radius:4px;font-family:var(--font-mono);font-size:var(--text-xs);">agro-vision-v1</code></td>
+                  <td>Image analysis: disease, pest, and nutrient ID</td>
+                  <td>16 images + 32K</td>
+                  <td>$1.00 / $2.00 per 1M tokens</td>
+                </tr>
+                <tr>
+                  <td><code style="background:var(--bg-secondary);padding:0.2rem 0.5rem;border-radius:4px;font-family:var(--font-mono);font-size:var(--text-xs);">agro-field-v1</code></td>
+                  <td>Field operations, mission planning, fleet control</td>
+                  <td>64K tokens</td>
+                  <td>$2.00 / $4.00 per 1M tokens</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Diagnose Endpoint -->
+          <section id="diagnose" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Diagnose</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">Upload a crop image to receive disease/pest diagnosis with treatment recommendations.</p>
+            <div style="display:inline-flex;align-items:center;gap:var(--space-sm);padding:0.3rem 0.8rem;background:rgba(34,139,34,0.08);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-sm);margin-bottom:var(--space-lg);">
+              <span style="color:var(--forest-green);font-weight:700;">POST</span>
+              <span>/v1/vision/diagnose</span>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">Request Body</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>{
+  <span class="string">"model"</span>: <span class="string">"agro-vision-v1"</span>,
+  <span class="string">"image"</span>: <span class="string">"base64_encoded_image_data"</span>,
+  <span class="string">"crop"</span>: <span class="string">"maize"</span>,
+  <span class="string">"language"</span>: <span class="string">"en"</span>,
+  <span class="string">"include_treatment"</span>: <span class="keyword">true</span>
+}</pre>
+            </div>
+            <div class="code-block" style="margin-top:var(--space-md);">
+              <div class="code-block__header">
+                <span class="code-block__lang">Response</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>{
+  <span class="string">"id"</span>: <span class="string">"diag_abc123"</span>,
+  <span class="string">"disease"</span>: <span class="string">"Northern Corn Leaf Blight"</span>,
+  <span class="string">"confidence"</span>: <span class="number">0.94</span>,
+  <span class="string">"severity"</span>: <span class="string">"moderate"</span>,
+  <span class="string">"treatment"</span>: {
+    <span class="string">"organic"</span>: [<span class="string">"Remove infected leaves"</span>, <span class="string">"Improve air circulation"</span>],
+    <span class="string">"chemical"</span>: [<span class="string">"Apply azoxystrobin-based fungicide"</span>],
+    <span class="string">"prevention"</span>: [<span class="string">"Rotate crops"</span>, <span class="string">"Use resistant varieties"</span>]
+  },
+  <span class="string">"model"</span>: <span class="string">"agro-vision-v1"</span>,
+  <span class="string">"usage"</span>: { <span class="string">"prompt_tokens"</span>: <span class="number">1024</span>, <span class="string">"completion_tokens"</span>: <span class="number">256</span> }
+}</pre>
+            </div>
+          </section>
+
+          <!-- Chat Completions -->
+          <section id="chat" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Chat Completions</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">Conversational interface for agricultural queries. Compatible with OpenAI chat format.</p>
+            <div style="display:inline-flex;align-items:center;gap:var(--space-sm);padding:0.3rem 0.8rem;background:rgba(34,139,34,0.08);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-sm);margin-bottom:var(--space-lg);">
+              <span style="color:var(--forest-green);font-weight:700;">POST</span>
+              <span>/v1/chat/completions</span>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">Request</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>{
+  <span class="string">"model"</span>: <span class="string">"agro-guard-v1"</span>,
+  <span class="string">"messages"</span>: [
+    {<span class="string">"role"</span>: <span class="string">"system"</span>, <span class="string">"content"</span>: <span class="string">"You are an agricultural expert."</span>},
+    {<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Best time to plant cassava in Katsina?"</span>}
+  ],
+  <span class="string">"language"</span>: <span class="string">"ha"</span>,
+  <span class="string">"temperature"</span>: <span class="number">0.7</span>,
+  <span class="string">"max_tokens"</span>: <span class="number">1024</span>
+}</pre>
+            </div>
+          </section>
+
+          <!-- Vision -->
+          <section id="vision" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Vision</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">Analyze crop images for diseases, pests, nutrient deficiencies, and growth stage assessment.</p>
+            <div style="display:inline-flex;align-items:center;gap:var(--space-sm);padding:0.3rem 0.8rem;background:rgba(34,139,34,0.08);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-sm);margin-bottom:var(--space-lg);">
+              <span style="color:var(--forest-green);font-weight:700;">POST</span>
+              <span>/v1/vision/analyze</span>
+            </div>
+            <p style="color:var(--text-secondary);">Accepts JPEG, PNG, and WebP images up to 20MB. Supports batch analysis of up to 16 images per request. Returns structured data including identified issues, confidence scores, affected regions, and recommended actions.</p>
+          </section>
+
+          <!-- Field Operations -->
+          <section id="field-ops" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Field Operations</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--space-lg);">Schedule and manage autonomous hardware missions via API.</p>
+            <div style="display:inline-flex;align-items:center;gap:var(--space-sm);padding:0.3rem 0.8rem;background:rgba(34,139,34,0.08);border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:var(--text-sm);margin-bottom:var(--space-lg);">
+              <span style="color:var(--forest-green);font-weight:700;">POST</span>
+              <span>/v1/field/missions</span>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <span class="code-block__lang">Request</span>
+                <button class="code-block__copy">Copy</button>
+              </div>
+              <pre>{
+  <span class="string">"model"</span>: <span class="string">"agro-field-v1"</span>,
+  <span class="string">"mission_type"</span>: <span class="string">"scout"</span>,
+  <span class="string">"field_id"</span>: <span class="string">"field_xyz789"</span>,
+  <span class="string">"schedule"</span>: <span class="string">"2026-04-15T06:00:00Z"</span>,
+  <span class="string">"devices"</span>: [<span class="string">"drone_001"</span>, <span class="string">"rover_002"</span>]
+}</pre>
+            </div>
+          </section>
+
+          <!-- Rate Limits -->
+          <section id="rate-limits" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Rate Limits</h2>
+            <table class="spec-table">
+              <thead>
+                <tr><th>Plan</th><th>Requests/min</th><th>Tokens/min</th><th>Requests/day</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Developer (Free)</td><td>20</td><td>40,000</td><td>1,000</td></tr>
+                <tr><td>Growth</td><td>100</td><td>200,000</td><td>100,000</td></tr>
+                <tr><td>Enterprise</td><td>Custom</td><td>Custom</td><td>Unlimited</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Error Codes -->
+          <section id="errors" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Error Codes</h2>
+            <table class="spec-table">
+              <thead>
+                <tr><th>Code</th><th>Meaning</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code style="font-family:var(--font-mono);">400</code></td><td>Bad request -- check your parameters</td></tr>
+                <tr><td><code style="font-family:var(--font-mono);">401</code></td><td>Unauthorized -- invalid or missing API key</td></tr>
+                <tr><td><code style="font-family:var(--font-mono);">403</code></td><td>Forbidden -- insufficient permissions for this resource</td></tr>
+                <tr><td><code style="font-family:var(--font-mono);">404</code></td><td>Not found -- endpoint does not exist</td></tr>
+                <tr><td><code style="font-family:var(--font-mono);">429</code></td><td>Rate limited -- slow down your requests</td></tr>
+                <tr><td><code style="font-family:var(--font-mono);">500</code></td><td>Internal server error -- contact support</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Changelog -->
+          <section id="changelog" style="margin-top:var(--space-4xl);">
+            <h2 style="margin-bottom:var(--space-md);">Changelog</h2>
+            <div style="border-left:3px solid var(--forest-green);padding-left:var(--space-lg);">
+              <div style="margin-bottom:var(--space-xl);">
+                <div style="font-size:var(--text-sm);font-weight:700;color:var(--forest-green);margin-bottom:var(--space-xs);">April 2026</div>
+                <div style="font-weight:600;margin-bottom:var(--space-xs);">v1.0.0 -- Initial Release</div>
+                <p style="color:var(--text-secondary);font-size:var(--text-sm);">Launch of agro-guard-v1, agro-vision-v1, and agro-field-v1 models. Python and Node.js SDKs. Full REST API.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Status -->
+          <section id="status" style="margin-top:var(--space-4xl);margin-bottom:var(--space-3xl);">
+            <h2 style="margin-bottom:var(--space-md);">Status</h2>
+            <div style="display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-lg);background:rgba(34,139,34,0.06);border:1px solid rgba(34,139,34,0.15);border-radius:var(--radius-md);">
+              <span style="width:12px;height:12px;background:var(--forest-green);border-radius:50%;display:inline-block;"></span>
+              <span style="font-weight:600;">All systems operational</span>
+              <span style="margin-left:auto;font-size:var(--text-sm);color:var(--text-muted);">Updated: April 2026</span>
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="header__logo" style="color:white;margin-bottom:var(--space-sm);display:inline-flex;">
+            <span class="header__logo-icon">AG</span>
+            AgroGuardAI
+          </a>
+          <p class="footer__brand-desc">The intelligence layer for global agriculture. One AI ecosystem powering every farm, everywhere.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Products</h4>
+          <a href="intelligence.html" class="footer__link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="footer__link">AgroMind</a>
+          <a href="agrorobotics.html" class="footer__link">AgroRobotics</a>
+          <a href="api.html" class="footer__link">API Docs</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
+          <a href="https://youtu.be/pceD7lIUGFU" target="_blank" rel="noopener" class="footer__link">Demo Video</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="terms.html" class="footer__link">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 AgroGuardAI. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="https://x.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
