@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroMind - The Conversational Interface for Farmers | AgroGuardAI</title>
+  <meta name="description" content="Ask questions, identify pests and diseases from photos, get guidance in any language. Farming intelligence in your pocket.">
+  <meta property="og:title" content="AgroMind - Conversational AI for Farmers">
+  <meta property="og:description" content="Ask questions, identify pests and diseases from photos, get guidance in any language.">
+  <meta property="og:image" content="https://i.postimg.cc/DzWMqsHq/AgroguardAI.png">
+  <meta name="theme-color" content="#228B22">
+  <link rel="icon" href="https://i.postimg.cc/DzWMqsHq/AgroguardAI.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="AgroGuardAI Home">
+        <span class="header__logo-icon">AG</span>
+        AgroGuardAI
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <div class="header__nav-links">
+          <a href="intelligence.html" class="header__nav-link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="header__nav-link active">AgroMind</a>
+          <a href="agrorobotics.html" class="header__nav-link">AgroRobotics</a>
+          <a href="api.html" class="header__nav-link">API</a>
+          <a href="pricing.html" class="header__nav-link">Pricing</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--secondary btn--sm">Log In</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+      <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="intelligence.html" class="mobile-menu__link">Agroguard Intelligence</a>
+    <a href="agromind.html" class="mobile-menu__link">AgroMind</a>
+    <a href="agrorobotics.html" class="mobile-menu__link">AgroRobotics</a>
+    <a href="api.html" class="mobile-menu__link">API</a>
+    <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__actions">
+      <a href="contact.html" class="btn btn--secondary">Log In</a>
+      <a href="pricing.html" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--product">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__label">
+          <span style="width:8px;height:8px;background:var(--tech-blue);border-radius:50%;display:inline-block;"></span>
+          Mobile App
+        </div>
+        <h1 class="hero__title">AgroMind</h1>
+        <p class="hero__subtitle">The conversational interface for farmers. Ask questions, snap photos to identify diseases, get expert guidance -- all in your language, with your voice.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="pricing.html" class="btn btn--primary btn--lg">Get Early Access</a>
+          <a href="https://youtu.be/pceD7lIUGFU" target="_blank" rel="noopener" class="btn btn--outline-white btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phone Mockup / Interface Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Interface</span>
+        <h2 class="section-title">Farming intelligence in your pocket</h2>
+        <p class="section-subtitle">A simple, intuitive mobile experience designed for farmers of all literacy levels. Voice-first, camera-ready.</p>
+      </div>
+
+      <!-- Chat mockup -->
+      <div class="reveal" style="max-width:400px;margin:0 auto;background:var(--bg-secondary);border-radius:var(--radius-xl);padding:var(--space-xl);border:1px solid var(--border-color);">
+        <div style="display:flex;align-items:center;gap:var(--space-sm);margin-bottom:var(--space-xl);padding-bottom:var(--space-md);border-bottom:1px solid var(--border-color);">
+          <div style="width:36px;height:36px;background:var(--forest-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:700;">AG</div>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">AgroMind</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">Online</div>
+          </div>
+        </div>
+        <!-- Messages -->
+        <div style="display:flex;flex-direction:column;gap:var(--space-md);">
+          <div style="align-self:flex-end;background:var(--forest-green);color:white;padding:0.6rem 1rem;border-radius:var(--radius-md) var(--radius-md) 4px var(--radius-md);font-size:var(--text-sm);max-width:80%;">
+            My maize leaves are turning yellow with brown spots. What is happening?
+          </div>
+          <div style="align-self:flex-start;background:white;padding:0.6rem 1rem;border-radius:var(--radius-md) var(--radius-md) var(--radius-md) 4px;font-size:var(--text-sm);max-width:85%;border:1px solid var(--border-color);">
+            <strong>Based on your description, this could be Northern Corn Leaf Blight (NCLB).</strong><br><br>
+            Symptoms: Cigar-shaped gray-green lesions on lower leaves, progressing upward.<br><br>
+            <span style="color:var(--forest-green);font-weight:600;">Recommended action:</span> Apply foliar fungicide (azoxystrobin) at first sign. Remove infected leaves. Rotate crops next season.
+          </div>
+          <div style="align-self:flex-end;background:var(--forest-green);color:white;padding:0.6rem 1rem;border-radius:var(--radius-md) var(--radius-md) 4px var(--radius-md);font-size:var(--text-sm);max-width:80%;">
+            Can you say this in Hausa?
+          </div>
+          <div style="align-self:flex-start;background:white;padding:0.6rem 1rem;border-radius:var(--radius-md) var(--radius-md) var(--radius-md) 4px;font-size:var(--text-sm);max-width:85%;border:1px solid var(--border-color);">
+            <strong>Wannan yana iya zama cutar ganyen masara ta Arewa (NCLB).</strong><br><br>
+            Alamomin: Tabo masu siffar sigari koren-toka a ganyen kasa...<br><br>
+            <span style="color:var(--forest-green);font-weight:600;">Shawarar aiki:</span> A fesa maganin naman gwari (azoxystrobin) da farko. A cire ganyen da suka kamu.
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-sm);margin-top:var(--space-lg);align-items:center;">
+          <div style="flex:1;background:white;border:1px solid var(--border-color);border-radius:var(--radius-full);padding:0.5rem 1rem;font-size:var(--text-sm);color:var(--text-muted);">Type or speak...</div>
+          <div style="width:36px;height:36px;background:var(--forest-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;flex-shrink:0;cursor:pointer;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+          </div>
+          <div style="width:36px;height:36px;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);flex-shrink:0;cursor:pointer;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything a farmer needs</h2>
+      </div>
+      <div class="card-grid reveal">
+        <div class="card">
+          <div class="card__icon card__icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+          </div>
+          <h3 class="card__title">Voice Interaction</h3>
+          <p class="card__desc">Speak to AgroMind in your language. No typing needed. Perfect for farmers in the field with dirty or busy hands.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          <h3 class="card__title">Visual Pest ID</h3>
+          <p class="card__desc">Take a photo of any affected plant. The AI analyzes it instantly and returns diagnosis, treatment, and prevention steps.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--brown">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="card__title">Multilingual</h3>
+          <p class="card__desc">Full support for Hausa, Yoruba, Igbo, Swahili, and English. More languages added continuously based on demand.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="card__title">Expert Q&amp;A</h3>
+          <p class="card__desc">Ask any farming question and get expert-level answers powered by the Agroguard Intelligence knowledge engine.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="card__title">Seasonal Alerts</h3>
+          <p class="card__desc">Proactive notifications about planting windows, weather risks, and disease outbreaks in your specific region.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--brown">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="card__title">Offline Mode</h3>
+          <p class="card__desc">Core features work without internet via edge AI on device. Critical for remote farming areas with poor connectivity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Languages -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Languages</span>
+        <h2 class="section-title">Speak your language</h2>
+        <p class="section-subtitle">AgroMind understands and responds in the languages your farmers actually speak.</p>
+      </div>
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-lg);max-width:800px;margin:0 auto;">
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:var(--bg-secondary);border-radius:var(--radius-md);">
+          <span style="font-size:2rem;">&#127475;&#127468;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">Hausa</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">70M+ speakers</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:var(--bg-secondary);border-radius:var(--radius-md);">
+          <span style="font-size:2rem;">&#127475;&#127468;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">Yoruba</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">45M+ speakers</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:var(--bg-secondary);border-radius:var(--radius-md);">
+          <span style="font-size:2rem;">&#127475;&#127468;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">Igbo</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">30M+ speakers</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:var(--bg-secondary);border-radius:var(--radius-md);">
+          <span style="font-size:2rem;">&#127472;&#127466;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">Swahili</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">100M+ speakers</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:var(--bg-secondary);border-radius:var(--radius-md);">
+          <span style="font-size:2rem;">&#127468;&#127463;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);">English</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">1.5B+ speakers</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-md);padding:var(--space-lg);background:rgba(34,139,34,0.06);border-radius:var(--radius-md);border:1px dashed var(--forest-green);">
+          <span style="font-size:2rem;">&#43;</span>
+          <div>
+            <div style="font-weight:700;font-size:var(--text-sm);color:var(--forest-green);">More Coming</div>
+            <div style="font-size:var(--text-xs);color:var(--text-muted);">Request a language</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--green">
+    <div class="container text-center">
+      <h2 style="font-size:var(--text-4xl);font-weight:800;margin-bottom:var(--space-lg);">Put expert farming knowledge in every farmer's pocket</h2>
+      <p style="font-size:var(--text-lg);opacity:0.9;max-width:560px;margin:0 auto var(--space-2xl);">AgroMind is available on Android and iOS. Get early access today and join the waitlist for your region.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="pricing.html" class="btn btn--white btn--lg">Get Early Access</a>
+        <a href="contact.html" class="btn btn--outline-white btn--lg">Request a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="header__logo" style="color:white;margin-bottom:var(--space-sm);display:inline-flex;">
+            <span class="header__logo-icon">AG</span>
+            AgroGuardAI
+          </a>
+          <p class="footer__brand-desc">The intelligence layer for global agriculture. One AI ecosystem powering every farm, everywhere.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Products</h4>
+          <a href="intelligence.html" class="footer__link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="footer__link">AgroMind</a>
+          <a href="agrorobotics.html" class="footer__link">AgroRobotics</a>
+          <a href="api.html" class="footer__link">API Docs</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
+          <a href="https://youtu.be/pceD7lIUGFU" target="_blank" rel="noopener" class="footer__link">Demo Video</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="terms.html" class="footer__link">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 AgroGuardAI. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="https://x.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
