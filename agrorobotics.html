@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroRobotics - Autonomous Agricultural Hardware | AgroGuardAI</title>
+  <meta name="description" content="Scout drones, ground rovers, and sprayer drones that execute precision farming operations powered by AI intelligence.">
+  <meta property="og:title" content="AgroRobotics - Autonomous Agricultural Hardware">
+  <meta property="og:description" content="Scout drones, ground rovers, and sprayer drones powered by AI intelligence.">
+  <meta property="og:image" content="https://i.postimg.cc/DzWMqsHq/AgroguardAI.png">
+  <meta name="theme-color" content="#228B22">
+  <link rel="icon" href="https://i.postimg.cc/DzWMqsHq/AgroguardAI.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="AgroGuardAI Home">
+        <span class="header__logo-icon">AG</span>
+        AgroGuardAI
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <div class="header__nav-links">
+          <a href="intelligence.html" class="header__nav-link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="header__nav-link">AgroMind</a>
+          <a href="agrorobotics.html" class="header__nav-link active">AgroRobotics</a>
+          <a href="api.html" class="header__nav-link">API</a>
+          <a href="pricing.html" class="header__nav-link">Pricing</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <a href="contact.html" class="btn btn--secondary btn--sm">Log In</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+      <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="intelligence.html" class="mobile-menu__link">Agroguard Intelligence</a>
+    <a href="agromind.html" class="mobile-menu__link">AgroMind</a>
+    <a href="agrorobotics.html" class="mobile-menu__link">AgroRobotics</a>
+    <a href="api.html" class="mobile-menu__link">API</a>
+    <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__actions">
+      <a href="contact.html" class="btn btn--secondary">Log In</a>
+      <a href="pricing.html" class="btn btn--primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--product">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__label">
+          <span style="width:8px;height:8px;background:var(--tech-blue);border-radius:50%;display:inline-block;"></span>
+          Hardware + AI
+        </div>
+        <h1 class="hero__title">AgroRobotics</h1>
+        <p class="hero__subtitle">Autonomous agricultural hardware that acts on AI intelligence. Scout drones survey, rovers collect data, and sprayer drones execute precision treatments -- all coordinated by Agroguard Intelligence.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="contact.html" class="btn btn--primary btn--lg">Request Demo</a>
+          <a href="#hardware" class="btn btn--outline-white btn--lg">View Hardware</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Products -->
+  <section class="section" id="hardware">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Hardware Fleet</span>
+        <h2 class="section-title">Three machines. One intelligent fleet.</h2>
+        <p class="section-subtitle">Purpose-built agricultural robots that work together to monitor, analyze, and treat your fields autonomously.</p>
+      </div>
+      <div class="card-grid reveal">
+        <!-- Scout Drone -->
+        <div class="hw-card">
+          <div class="hw-card__img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#228B22" stroke-width="1.5"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><line x1="22" y1="8.5" x2="12" y2="15.5"/><line x1="2" y1="8.5" x2="12" y2="15.5"/></svg>
+          </div>
+          <div class="hw-card__body">
+            <h3 class="hw-card__title">Scout Drone</h3>
+            <p class="hw-card__desc">High-altitude aerial surveillance with multispectral imaging. Autonomously patrols fields on scheduled routes, capturing detailed crop health data for AI analysis.</p>
+            <div class="hw-card__specs">
+              <span class="hw-spec-tag">45 min flight</span>
+              <span class="hw-spec-tag">200 hectares/flight</span>
+              <span class="hw-spec-tag">Multispectral camera</span>
+              <span class="hw-spec-tag">RTK GPS</span>
+              <span class="hw-spec-tag">Autonomous navigation</span>
+            </div>
+          </div>
+        </div>
+        <!-- Ground Rover -->
+        <div class="hw-card">
+          <div class="hw-card__img" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#8B4513" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="hw-card__body">
+            <h3 class="hw-card__title">Ground Rover</h3>
+            <p class="hw-card__desc">All-terrain ground robot that navigates between crop rows collecting soil samples, monitoring plant health at close range, and detecting ground-level issues drones miss.</p>
+            <div class="hw-card__specs">
+              <span class="hw-spec-tag">8 hr battery</span>
+              <span class="hw-spec-tag">Soil sensors</span>
+              <span class="hw-spec-tag">Close-range camera</span>
+              <span class="hw-spec-tag">All-terrain</span>
+              <span class="hw-spec-tag">Obstacle avoidance</span>
+            </div>
+          </div>
+        </div>
+        <!-- Sprayer Drone -->
+        <div class="hw-card">
+          <div class="hw-card__img" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2);">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#008080" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="hw-card__body">
+            <h3 class="hw-card__title">Sprayer Drone</h3>
+            <p class="hw-card__desc">Precision aerial application system that delivers pesticides, herbicides, and fertilizers exactly where needed. Reduces chemical use by up to 80% compared to blanket spraying.</p>
+            <div class="hw-card__specs">
+              <span class="hw-spec-tag">20L tank</span>
+              <span class="hw-spec-tag">10 hectares/hour</span>
+              <span class="hw-spec-tag">cm-level precision</span>
+              <span class="hw-spec-tag">Variable rate</span>
+              <span class="hw-spec-tag">Auto-refill return</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Workflow</span>
+        <h2 class="section-title">How AgroRobotics works</h2>
+        <p class="section-subtitle">A closed-loop system where AI drives every decision from scouting to treatment.</p>
+      </div>
+      <div class="card-grid card-grid--4 reveal">
+        <div class="card text-center">
+          <div style="font-size:var(--text-4xl);font-weight:800;color:var(--forest-green);margin-bottom:var(--space-md);">01</div>
+          <h3 class="card__title">Scout</h3>
+          <p class="card__desc">Drones autonomously survey your fields on scheduled routes, capturing high-resolution multispectral imagery.</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:var(--text-4xl);font-weight:800;color:var(--forest-green);margin-bottom:var(--space-md);">02</div>
+          <h3 class="card__title">Analyze</h3>
+          <p class="card__desc">Agroguard Intelligence processes the imagery, identifying disease hotspots, nutrient deficiencies, and pest activity.</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:var(--text-4xl);font-weight:800;color:var(--forest-green);margin-bottom:var(--space-md);">03</div>
+          <h3 class="card__title">Plan</h3>
+          <p class="card__desc">The AI generates a treatment map with precise coordinates, dosages, and timing for each affected zone.</p>
+        </div>
+        <div class="card text-center">
+          <div style="font-size:var(--text-4xl);font-weight:800;color:var(--forest-green);margin-bottom:var(--space-md);">04</div>
+          <h3 class="card__title">Execute</h3>
+          <p class="card__desc">Sprayer drones autonomously carry out the treatment plan with centimeter-level precision. No human in the loop needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Specifications</span>
+        <h2 class="section-title">Technical details</h2>
+      </div>
+      <div style="max-width:800px;margin:0 auto;" class="reveal">
+        <table class="spec-table">
+          <thead>
+            <tr><th>Feature</th><th>Scout Drone</th><th>Ground Rover</th><th>Sprayer Drone</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Operating Time</td><td>45 minutes</td><td>8 hours</td><td>20 minutes/tank</td></tr>
+            <tr><td>Coverage</td><td>200 ha/flight</td><td>10 ha/charge</td><td>10 ha/hour</td></tr>
+            <tr><td>Navigation</td><td>RTK GPS + Vision</td><td>LIDAR + GPS</td><td>RTK GPS + Vision</td></tr>
+            <tr><td>Connectivity</td><td>4G LTE + WiFi</td><td>4G LTE + WiFi</td><td>4G LTE + WiFi</td></tr>
+            <tr><td>AI Processing</td><td>NVIDIA Jetson</td><td>NVIDIA Jetson</td><td>NVIDIA Jetson</td></tr>
+            <tr><td>Weather Rating</td><td>Wind &lt;25 km/h</td><td>All-weather IP67</td><td>Wind &lt;20 km/h</td></tr>
+            <tr><td>Weight</td><td>4.2 kg</td><td>35 kg</td><td>22 kg (empty)</td></tr>
+            <tr><td>Data Output</td><td>Multispectral + RGB</td><td>Soil + Close-range</td><td>Application logs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Integration</span>
+        <h2 class="section-title" style="color:var(--white);">Powered by Agroguard Intelligence</h2>
+        <p class="section-subtitle">Every robot in the fleet is connected to the Agroguard Intelligence engine. Decisions are data-driven, not rule-based.</p>
+      </div>
+      <div class="card-grid card-grid--2 reveal" style="max-width:800px;margin:0 auto;">
+        <div class="card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--white);">Real-Time AI Decisions</h3>
+          <p class="card__desc" style="color:rgba(255,255,255,0.7);">On-board NVIDIA Jetson processes data locally for immediate decision-making. Cloud sync for deeper analysis when connectivity allows.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--white);">Fleet Coordination</h3>
+          <p class="card__desc" style="color:rgba(255,255,255,0.7);">Drones and rovers communicate to avoid overlap, share discoveries, and coordinate treatment missions across your entire operation.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--white);">API Access</h3>
+          <p class="card__desc" style="color:rgba(255,255,255,0.7);">Full programmatic control via REST API. Schedule missions, retrieve field data, and integrate with existing farm management software.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--white);">Continuous Learning</h3>
+          <p class="card__desc" style="color:rgba(255,255,255,0.7);">Every mission improves the AI. Field data feeds back into the model, making recommendations more accurate over time for your specific farm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--green">
+    <div class="container text-center">
+      <h2 style="font-size:var(--text-4xl);font-weight:800;margin-bottom:var(--space-lg);">Ready to automate your field operations?</h2>
+      <p style="font-size:var(--text-lg);opacity:0.9;max-width:560px;margin:0 auto var(--space-2xl);">Request a demo to see AgroRobotics in action on your farm. Custom fleet configurations available for operations of any scale.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn--white btn--lg">Request Demo</a>
+        <a href="pricing.html" class="btn btn--outline-white btn--lg">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="header__logo" style="color:white;margin-bottom:var(--space-sm);display:inline-flex;">
+            <span class="header__logo-icon">AG</span>
+            AgroGuardAI
+          </a>
+          <p class="footer__brand-desc">The intelligence layer for global agriculture. One AI ecosystem powering every farm, everywhere.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Products</h4>
+          <a href="intelligence.html" class="footer__link">Agroguard Intelligence</a>
+          <a href="agromind.html" class="footer__link">AgroMind</a>
+          <a href="agrorobotics.html" class="footer__link">AgroRobotics</a>
+          <a href="api.html" class="footer__link">API Docs</a>
+          <a href="pricing.html" class="footer__link">Pricing</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <a href="contact.html" class="footer__link">Contact</a>
+          <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
+          <a href="https://youtu.be/pceD7lIUGFU" target="_blank" rel="noopener" class="footer__link">Demo Video</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="terms.html" class="footer__link">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 AgroGuardAI. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="https://x.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
