@@ -19,6 +19,7 @@
   <link rel="canonical" href="https://agroguardai.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="hero-bg.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -70,7 +71,7 @@
     <div class="container">
       <div class="hero__content animate-on-scroll">
         <div class="hero__label">
-          <img src="african-impact-logo.png" alt="African Impact Initiative" class="hero__label-icon">
+          <img src="african-impact-logo.webp" alt="African Impact Initiative" class="hero__label-icon">
           African Impact Challenge 2026 Cohort
         </div>
         <h1 class="hero__title">
@@ -121,7 +122,7 @@
         <!-- Card 1: AgroGuard Intelligence -->
         <div class="ecosystem-card ecosystem-card--intelligence animate-on-scroll">
           <div class="ecosystem-card__image">
-            <img src="intelligence-ai-core.png" alt="Neural network LLM processing agricultural data">
+            <img src="intelligence-ai-core.webp" alt="Neural network LLM processing agricultural data" loading="lazy">
           </div>
           <div class="ecosystem-card__content">
             <div class="ecosystem-card__tag">Software / LLM</div>
@@ -139,7 +140,7 @@
         <!-- Card 2: AgroMind -->
         <div class="ecosystem-card ecosystem-card--agromind animate-on-scroll">
           <div class="ecosystem-card__image">
-            <img src="agromind-bg.jpg" alt="AgroMind mobile chat interface mockup">
+            <img src="agromind-bg.webp" alt="AgroMind mobile chat interface mockup" loading="lazy">
           </div>
           <div class="ecosystem-card__content">
             <div class="ecosystem-card__tag">Software / App</div>
@@ -157,7 +158,7 @@
         <!-- Card 3: AgroRobotics -->
         <div class="ecosystem-card ecosystem-card--robotics animate-on-scroll">
           <div class="ecosystem-card__image">
-            <img src="agrorobotics-bg.jpg" alt="Autonomous farming drone in a field">
+            <img src="agrorobotics-bg.webp" alt="Autonomous farming drone in a field" loading="lazy">
           </div>
           <div class="ecosystem-card__content">
             <div class="ecosystem-card__tag">Hardware / Robotics</div>
@@ -336,6 +337,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
