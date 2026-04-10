@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing - Plans for Every Scale | AgroGuardAI</title>
-  <meta name="description" content="Start free, scale as you grow. Developer, Growth, and Enterprise plans for agricultural AI.">
-  <meta name="theme-color" content="#228B22">
+  <title>Pricing | AgroGuardAI</title>
+  <meta name="description" content="AgroGuardAI pricing plans. Flexible options for farmers, enterprises, and developers. Free tier available.">
+  <meta property="og:title" content="Pricing | AgroGuardAI">
+  <meta property="og:description" content="Simple, transparent pricing for agricultural AI solutions.">
+  <meta property="og:image" content="https://agroguardaiaOS.github.io/AgroguardAI/mylogo.png">
+  <meta name="theme-color" content="#4caf50">
   <link rel="icon" href="mylogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +21,13 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__logo" aria-label="AgroGuardAI Home">
-        <span class="header__logo-icon">AG</span>
-        AgroGuardAI
+        <img src="mylogo.png" alt="AgroGuardAI" class="header__logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="header__logo-icon" style="display:none">AG</span>
+        <span class="header__logo-text">AgroGuardAI</span>
       </a>
       <nav class="header__nav" role="navigation" aria-label="Main navigation">
         <div class="header__nav-links">
-          <a href="intelligence.html" class="header__nav-link">Agroguard Intelligence</a>
+          <a href="intelligence.html" class="header__nav-link">Intelligence</a>
           <a href="agromind.html" class="header__nav-link">AgroMind</a>
           <a href="agrorobotics.html" class="header__nav-link">AgroRobotics</a>
           <a href="api.html" class="header__nav-link">API</a>
@@ -31,7 +35,7 @@
         </div>
       </nav>
       <div class="header__actions">
-        <a href="contact.html" class="btn btn--secondary btn--sm">Log In</a>
+        <a href="contact.html" class="btn btn--secondary btn--sm">Contact</a>
         <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
       </div>
       <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -40,230 +44,192 @@
     </div>
   </header>
 
+  <!-- Mobile Menu -->
   <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
-    <a href="intelligence.html" class="mobile-menu__link">Agroguard Intelligence</a>
+    <a href="intelligence.html" class="mobile-menu__link">Intelligence</a>
     <a href="agromind.html" class="mobile-menu__link">AgroMind</a>
     <a href="agrorobotics.html" class="mobile-menu__link">AgroRobotics</a>
     <a href="api.html" class="mobile-menu__link">API</a>
     <a href="pricing.html" class="mobile-menu__link">Pricing</a>
     <a href="contact.html" class="mobile-menu__link">Contact</a>
     <div class="mobile-menu__actions">
-      <a href="contact.html" class="btn btn--secondary">Log In</a>
+      <a href="contact.html" class="btn btn--secondary">Contact</a>
       <a href="pricing.html" class="btn btn--primary">Get Started</a>
     </div>
   </div>
 
-  <!-- Hero -->
-  <section style="padding-top:calc(var(--header-height) + var(--space-4xl));padding-bottom:var(--space-2xl);">
-    <div class="container text-center">
-      <span class="section-label">Pricing</span>
-      <h1 class="section-title" style="font-size:var(--text-5xl);">Start free. Scale as you grow.</h1>
-      <p class="section-subtitle">Simple, transparent pricing for agricultural AI. No hidden fees, no surprises.</p>
-
-      <!-- Toggle -->
-      <div class="pricing-toggle">
-        <span class="pricing-toggle__label active">Monthly</span>
-        <div class="pricing-toggle__switch" role="switch" aria-checked="false" tabindex="0"></div>
-        <span class="pricing-toggle__label">Annual <span class="pricing-save">Save 20%</span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Cards -->
-  <section style="padding-bottom:var(--space-5xl);">
+  <!-- Hero Section -->
+  <section class="hero hero--product">
     <div class="container">
-      <div class="card-grid">
-        <!-- Developer -->
-        <div class="pricing-card">
-          <div class="pricing-card__name">Developer</div>
-          <div class="pricing-card__desc">For individuals exploring agricultural AI and building prototypes.</div>
-          <div class="pricing-card__price">Free</div>
-          <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-md);">No credit card required</p>
-          <a href="api.html" class="btn btn--secondary" style="width:100%;">Get Started Free</a>
-          <div class="pricing-card__features">
-            <div class="pricing-card__feature">1,000 API calls per month</div>
-            <div class="pricing-card__feature">agro-guard-v1 model access</div>
-            <div class="pricing-card__feature">Basic crop Q&amp;A</div>
-            <div class="pricing-card__feature">Community support</div>
-            <div class="pricing-card__feature">Standard rate limits</div>
-            <div class="pricing-card__feature">Documentation &amp; examples</div>
-          </div>
+      <div class="hero__content animate-on-scroll">
+        <div class="hero__label">
+          <span style="width:8px;height:8px;background:var(--color-primary-400);border-radius:50%;display:inline-block;"></span>
+          Simple & Transparent
         </div>
+        <h1 class="hero__title">Pricing</h1>
+        <p class="hero__subtitle">Flexible plans for farmers, enterprises, and developers. Start free, scale as you grow. No hidden fees.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- Growth -->
-        <div class="pricing-card pricing-card--featured">
-          <div class="pricing-card__name">Growth</div>
-          <div class="pricing-card__desc">For teams and businesses building production agricultural applications.</div>
+  <!-- Pricing Plans -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Plans</span>
+        <h2 class="section-title">Choose Your Plan</h2>
+        <p class="section-subtitle">All plans include access to AgroGuard Intelligence, AgroMind, and core features.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Free Plan -->
+        <div class="pricing-card animate-on-scroll">
+          <h3 class="pricing-card__name">Free</h3>
           <div class="pricing-card__price">
-            $<span data-monthly="49" data-annual="470">49</span><span data-period>/month</span>
+            <span class="pricing-card__amount">$0</span>
+            <span class="pricing-card__period">/month</span>
           </div>
-          <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-md);">Billed monthly or annually</p>
-          <a href="contact.html" class="btn btn--primary" style="width:100%;">Start Growth Plan</a>
-          <div class="pricing-card__features">
-            <div class="pricing-card__feature">100,000 API calls per month</div>
-            <div class="pricing-card__feature">All models: guard, vision, field</div>
-            <div class="pricing-card__feature">Vision API for disease ID</div>
-            <div class="pricing-card__feature">Priority email support</div>
-            <div class="pricing-card__feature">FieldOps integration</div>
-            <div class="pricing-card__feature">Webhook notifications</div>
-            <div class="pricing-card__feature">Usage analytics dashboard</div>
-            <div class="pricing-card__feature">Multilingual support (5 languages)</div>
-          </div>
+          <p class="pricing-card__desc">Perfect for getting started and learning the platform.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              AgroMind app access
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Up to 100 diagnostics/month
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic crop monitoring
+            </li>
+            <li class="pricing-feature pricing-feature--disabled">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Autonomous hardware
+            </li>
+            <li class="pricing-feature pricing-feature--disabled">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              API access
+            </li>
+            <li class="pricing-feature pricing-feature--disabled">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Priority support
+            </li>
+          </ul>
+          <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--outline btn--lg" style="width:100%;">Get Started</a>
         </div>
 
-        <!-- Enterprise -->
-        <div class="pricing-card">
-          <div class="pricing-card__name">Enterprise</div>
-          <div class="pricing-card__desc">For large-scale operations needing custom solutions and dedicated support.</div>
-          <div class="pricing-card__price">Custom</div>
-          <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-md);">Tailored to your needs</p>
-          <a href="contact.html" class="btn btn--secondary" style="width:100%;">Contact Sales</a>
-          <div class="pricing-card__features">
-            <div class="pricing-card__feature">Unlimited API calls</div>
-            <div class="pricing-card__feature">All models + custom fine-tuning</div>
-            <div class="pricing-card__feature">Custom model training on your data</div>
-            <div class="pricing-card__feature">Dedicated account manager</div>
-            <div class="pricing-card__feature">SLA guarantees (99.9% uptime)</div>
-            <div class="pricing-card__feature">Data residency options</div>
-            <div class="pricing-card__feature">On-premise deployment</div>
-            <div class="pricing-card__feature">AgroRobotics fleet management</div>
-            <div class="pricing-card__feature">24/7 priority support</div>
-            <div class="pricing-card__feature">Custom language support</div>
+        <!-- Pro Plan -->
+        <div class="pricing-card pricing-card--featured animate-on-scroll">
+          <div class="pricing-card__badge">Most Popular</div>
+          <h3 class="pricing-card__name">Pro</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$99</span>
+            <span class="pricing-card__period">/month</span>
           </div>
+          <p class="pricing-card__desc">For serious farmers and small enterprises.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited diagnostics
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Advanced crop monitoring
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Yield prediction
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Weather integration
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Email support
+            </li>
+            <li class="pricing-feature pricing-feature--disabled">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Autonomous hardware
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn--primary btn--lg" style="width:100%;">Start Free Trial</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card animate-on-scroll">
+          <h3 class="pricing-card__name">Enterprise</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">Custom</span>
+            <span class="pricing-card__period"></span>
+          </div>
+          <p class="pricing-card__desc">For large-scale operations and integrations.</p>
+          <ul class="pricing-card__features">
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Everything in Pro
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Autonomous hardware
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Fleet management
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              API access
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority support
+            </li>
+            <li class="pricing-feature">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom integrations
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn--outline btn--lg" style="width:100%;">Contact Sales</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Feature Comparison -->
+  <!-- API Pricing -->
   <section class="section section--gray">
     <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Compare plans</h2>
-        <p class="section-subtitle">A detailed breakdown of what's included in each plan.</p>
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Developers</span>
+        <h2 class="section-title">API Pricing</h2>
+        <p class="section-subtitle">Flexible pricing for developers and integrations.</p>
       </div>
-      <div style="overflow-x:auto;" class="reveal">
-        <table class="spec-table" style="min-width:700px;">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Developer</th>
-              <th style="background:rgba(34,139,34,0.06);">Growth</th>
-              <th>Enterprise</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>API Calls</strong></td>
-              <td>1,000/mo</td>
-              <td style="background:rgba(34,139,34,0.03);">100,000/mo</td>
-              <td>Unlimited</td>
-            </tr>
-            <tr>
-              <td><strong>agro-guard-v1</strong></td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--forest-green);">&#10003;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>agro-vision-v1</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--forest-green);">&#10003;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>agro-field-v1</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--forest-green);">&#10003;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>Multilingual</strong></td>
-              <td>English only</td>
-              <td style="background:rgba(34,139,34,0.03);">5 languages</td>
-              <td>Custom</td>
-            </tr>
-            <tr>
-              <td><strong>Vision API</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--forest-green);">&#10003;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>FieldOps Integration</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--forest-green);">&#10003;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>Custom Fine-Tuning</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--mid-gray);">&#8212;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>Data Residency</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);color:var(--mid-gray);">&#8212;</td>
-              <td style="color:var(--forest-green);">&#10003;</td>
-            </tr>
-            <tr>
-              <td><strong>SLA</strong></td>
-              <td style="color:var(--mid-gray);">&#8212;</td>
-              <td style="background:rgba(34,139,34,0.03);">99.5%</td>
-              <td>99.9%</td>
-            </tr>
-            <tr>
-              <td><strong>Support</strong></td>
-              <td>Community</td>
-              <td style="background:rgba(34,139,34,0.03);">Priority email</td>
-              <td>24/7 dedicated</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container container--narrow">
-      <div class="text-center">
-        <h2 class="section-title">Frequently asked questions</h2>
-      </div>
-      <div class="reveal">
-        <div style="border-bottom:1px solid var(--border-color);padding:var(--space-xl) 0;">
-          <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-sm);">Can I switch plans at any time?</h3>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm);">Yes. You can upgrade, downgrade, or cancel at any time. Upgrades take effect immediately. Downgrades take effect at the end of your current billing cycle.</p>
+      <div style="max-width:700px;margin:var(--space-12) auto;background:var(--color-background);padding:var(--space-8);border-radius:var(--radius-lg);border:1px solid var(--color-border);text-align:center;">
+        <div style="font-size:var(--font-size-2xl);font-weight:var(--font-weight-bold);color:var(--color-text-primary);margin-bottom:var(--space-4);">
+          API Pricing
         </div>
-        <div style="border-bottom:1px solid var(--border-color);padding:var(--space-xl) 0;">
-          <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-sm);">What happens if I exceed my API call limit?</h3>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm);">On the Developer plan, requests will be rate-limited. On Growth, you can enable pay-as-you-go overage at $0.001 per additional call. Enterprise plans have no limits.</p>
-        </div>
-        <div style="border-bottom:1px solid var(--border-color);padding:var(--space-xl) 0;">
-          <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-sm);">Do you offer discounts for NGOs or educational institutions?</h3>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm);">Yes. We offer significant discounts for non-profits, educational institutions, and agricultural cooperatives. Contact our sales team for details.</p>
-        </div>
-        <div style="border-bottom:1px solid var(--border-color);padding:var(--space-xl) 0;">
-          <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-sm);">Is there a free trial for the Growth plan?</h3>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm);">All new accounts start with 14 days of Growth plan features free. No credit card required for the trial period.</p>
-        </div>
-        <div style="padding:var(--space-xl) 0;">
-          <h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-sm);">How is AgroRobotics hardware priced?</h3>
-          <p style="color:var(--text-secondary);font-size:var(--text-sm);">AgroRobotics hardware is priced separately and available on Enterprise plans. Contact sales for fleet configurations, leasing options, and volume discounts.</p>
-        </div>
+        <p style="font-size:var(--font-size-base);color:var(--color-text-secondary);margin-bottom:var(--space-6);">
+          Coming Soon
+        </p>
+        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--space-6);">
+          We're finalizing our API pricing model to ensure it works for developers of all sizes. Flexible pay-as-you-go and volume-based options coming soon.
+        </p>
+        <a href="contact.html" class="btn btn--primary">Request Early Access</a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section section--green">
-    <div class="container text-center">
-      <h2 style="font-size:var(--text-4xl);font-weight:800;margin-bottom:var(--space-lg);">Ready to get started?</h2>
-      <p style="font-size:var(--text-lg);opacity:0.9;max-width:520px;margin:0 auto var(--space-2xl);">Create a free account and make your first API call in under 2 minutes.</p>
-      <div class="btn-group" style="justify-content:center;">
-        <a href="api.html" class="btn btn--white btn--lg">Start Free</a>
-        <a href="contact.html" class="btn btn--outline-white btn--lg">Talk to Sales</a>
+  <section class="section">
+    <div class="container">
+      <div class="text-center animate-on-scroll" style="max-width:700px;margin-left:auto;margin-right:auto;">
+        <h2 class="section-title">Ready to Get Started?</h2>
+        <p class="section-subtitle">Join farmers and enterprises using AgroGuardAI to increase yields and reduce costs.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+          <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Start Free</a>
+          <a href="contact.html" class="btn btn--outline btn--lg">Contact Sales</a>
+        </div>
       </div>
     </div>
   </section>
@@ -273,7 +239,7 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <a href="index.html" class="header__logo" style="color:white;margin-bottom:var(--space-sm);display:inline-flex;">
+          <a href="index.html" class="header__logo" style="color:var(--color-text-on-dark);margin-bottom:var(--space-2);display:inline-flex;">
             <span class="header__logo-icon">AG</span>
             AgroGuardAI
           </a>
@@ -281,7 +247,7 @@
         </div>
         <div>
           <h4 class="footer__heading">Products</h4>
-          <a href="intelligence.html" class="footer__link">Agroguard Intelligence</a>
+          <a href="intelligence.html" class="footer__link">AgroGuard Intelligence</a>
           <a href="agromind.html" class="footer__link">AgroMind</a>
           <a href="agrorobotics.html" class="footer__link">AgroRobotics</a>
           <a href="api.html" class="footer__link">API Docs</a>
@@ -291,7 +257,7 @@
           <h4 class="footer__heading">Company</h4>
           <a href="contact.html" class="footer__link">Contact</a>
           <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
-          <a href="https://youtu.be/pceD7lIUGFU" target="_blank" rel="noopener" class="footer__link">Demo Video</a>
+          <a href="#" class="footer__link">Status</a>
         </div>
         <div>
           <h4 class="footer__heading">Legal</h4>
