@@ -34,7 +34,7 @@
     const isOpen = menu.classList.toggle('active');
     toggle.setAttribute('aria-expanded', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    
+
     // Update toggle icon
     toggle.innerHTML = isOpen
       ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'
@@ -44,12 +44,13 @@
   toggle.addEventListener('click', toggleMenu);
 
   // Close menu when a link is clicked
-  menu.querySelectorAll('a').forEach(link => {
+  menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       menu.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      toggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      toggle.innerHTML =
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     });
   });
 })();
@@ -61,8 +62,8 @@
 (function initActiveNavLink() {
   const links = document.querySelectorAll('.header__nav-link');
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  
-  links.forEach(link => {
+
+  links.forEach((link) => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
@@ -78,23 +79,30 @@
   const elements = document.querySelectorAll('.animate-on-scroll');
   if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Stagger animation for sibling elements
-        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.animate-on-scroll:not(.visible)'));
-        const index = siblings.indexOf(entry.target);
-        
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 80);
-        
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Stagger animation for sibling elements
+          const siblings = Array.from(
+            entry.target.parentElement.querySelectorAll(
+              '.animate-on-scroll:not(.visible)',
+            ),
+          );
+          const index = siblings.indexOf(entry.target);
 
-  elements.forEach(el => observer.observe(el));
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+  );
+
+  elements.forEach((el) => observer.observe(el));
 })();
 
 /**
@@ -102,18 +110,18 @@
  * Manages tabbed content sections
  */
 (function initTabs() {
-  document.querySelectorAll('[data-tabs]').forEach(container => {
+  document.querySelectorAll('[data-tabs]').forEach((container) => {
     const tabs = container.querySelectorAll('.tab');
     const panels = container.querySelectorAll('.tab-panel');
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const targetPanel = tab.dataset.tab;
-        
+
         // Deactivate all tabs and panels
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
-        
+        tabs.forEach((t) => t.classList.remove('active'));
+        panels.forEach((p) => p.classList.remove('active'));
+
         // Activate selected tab and panel
         tab.classList.add('active');
         const panel = container.querySelector(`[data-panel="${targetPanel}"]`);
@@ -144,11 +152,11 @@
     if (monthlyLabel) monthlyLabel.classList.toggle('active', !isAnnual);
     if (annualLabel) annualLabel.classList.toggle('active', isAnnual);
 
-    prices.forEach(el => {
+    prices.forEach((el) => {
       el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
     });
 
-    document.querySelectorAll('[data-period-label]').forEach(el => {
+    document.querySelectorAll('[data-period-label]').forEach((el) => {
       el.textContent = isAnnual ? '/yr' : '/mo';
     });
   });
@@ -159,18 +167,18 @@
  * Allows users to copy code snippets to clipboard
  */
 (function initCodeCopy() {
-  document.querySelectorAll('.code-block__copy').forEach(btn => {
+  document.querySelectorAll('.code-block__copy').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const pre = btn.closest('.code-block').querySelector('pre');
       if (!pre) return;
 
       try {
         await navigator.clipboard.writeText(pre.innerText);
-        
+
         const originalText = btn.textContent;
         btn.textContent = 'Copied!';
         btn.style.color = 'var(--color-primary-300)';
-        
+
         setTimeout(() => {
           btn.textContent = originalText;
           btn.style.color = '';
@@ -187,11 +195,11 @@
  * Provides smooth scrolling to page sections
  */
 (function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
       const target = document.querySelector(targetId);
-      
+
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
@@ -210,10 +218,10 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const btn = form.querySelector('[type="submit"]');
     const originalText = btn ? btn.textContent : '';
-    
+
     if (btn) {
       btn.textContent = 'Sending...';
       btn.disabled = true;
@@ -221,7 +229,7 @@
 
     try {
       // Simulate API call (replace with real endpoint)
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      await new Promise((resolve) => setTimeout(resolve, 1200));
 
       // Show success message
       form.innerHTML = `
@@ -247,7 +255,9 @@
  * Animates numeric counters when they come into view
  */
 (function initStatCounters() {
-  const statElements = document.querySelectorAll('.stat-block__number[data-count]');
+  const statElements = document.querySelectorAll(
+    '.stat-block__number[data-count]',
+  );
   if (!statElements.length) return;
 
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
@@ -263,10 +273,12 @@
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const value = target * easeOut(progress);
-      const display = Number.isInteger(target) ? Math.floor(value) : value.toFixed(1);
-      
+      const display = Number.isInteger(target)
+        ? Math.floor(value)
+        : value.toFixed(1);
+
       el.textContent = prefix + display + suffix;
-      
+
       if (progress < 1) {
         requestAnimationFrame(update);
       }
@@ -275,47 +287,17 @@
     requestAnimationFrame(update);
   }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-  statElements.forEach(el => observer.observe(el));
+  statElements.forEach((el) => observer.observe(el));
 })();
-
-/**
- * Utility: Debounce Function
- * Prevents excessive function calls during rapid events
- */
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
-
-/**
- * Window Resize Handler
- * Handles responsive behavior on window resize
- */
-(function initResizeHandler() {
-  const handleResize = debounce(() => {
-    // Add any resize-specific logic here
-  }, 250);
-
-  window.addEventListener('resize', handleResize, { passive: true });
-})();
-
-// Export for testing (if using modules)
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { debounce };
-}
