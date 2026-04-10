@@ -568,9 +568,10 @@ p {
 }
 
 .hero--home {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('hero-bg.jpg');
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.6) 100%), url('hero-bg.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--color-text-on-dark);
 }
 
@@ -648,12 +649,14 @@ p {
 
 .hero__subtitle {
   font-size: var(--font-size-xl);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--space-8);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  line-height: var(--line-height-normal);
+  line-height: 1.7;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
 }
 
 .hero__actions {
@@ -1518,6 +1521,15 @@ p {
 
   .hero__content {
     text-align: center;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
   }
 
   .hero__actions {
