@@ -328,7 +328,7 @@
   }
 
   a {
-    @apply text-primary hover:text-primary-700 transition-colors;
+    @apply text-primary hover:text-primary transition-colors;
   }
 
   code {
