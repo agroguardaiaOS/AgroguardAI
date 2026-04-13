@@ -5,31 +5,49 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Intelligence from "./pages/Intelligence";
+import AgroMind from "./pages/AgroMind";
+import AgroRobotics from "./pages/AgroRobotics";
+import API from "./pages/API";
+import Pricing from "./pages/Pricing";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 
-
+/**
+ * Main Router Component
+ * Defines all application routes
+ */
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
+      <Route path="/" component={Home} />
+      <Route path="/intelligence" component={Intelligence} />
+      <Route path="/agromind" component={AgroMind} />
+      <Route path="/agrorobotics" component={AgroRobotics} />
+      <Route path="/api" component={API} />
+      <Route path="/pricing" component={Pricing} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/about" component={About} />
+      <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
+/**
+ * Main App Component
+ * Wraps the application with providers and theme context
+ * 
+ * Design System: Light theme with AgroGuardAI color palette
+ * - Primary: Forest Green (#4caf50)
+ * - Secondary: Tech Cyan (#00bcd4)
+ * - Accent: Harvest Gold (#ff9800)
+ */
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
