@@ -420,7 +420,7 @@
   }
 
   .btn--primary {
-    @apply bg-primary text-white hover:bg-primary-700 shadow-md hover:shadow-lg;
+    @apply bg-primary text-white hover:bg-primary shadow-md hover:shadow-lg;
   }
 
   .btn--secondary {
@@ -436,7 +436,7 @@
   }
 
   .btn--ghost {
-    @apply text-primary hover:bg-primary hover:bg-opacity-10;
+    @apply text-primary hover:bg-primary/10;
   }
 
   .btn--sm {
@@ -453,7 +453,7 @@
   }
 
   .hero--home {
-    @apply bg-gradient-to-br from-neutral-50 to-primary-50;
+    @apply bg-gradient-to-br from-neutral-50 to-neutral-100;
   }
 
   .hero--product {
@@ -465,7 +465,7 @@
   }
 
   .hero__label {
-    @apply inline-flex items-center gap-2 text-sm font-semibold text-primary mb-6 bg-primary-50 px-4 py-2 rounded-full;
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-primary mb-6 bg-neutral-100 px-4 py-2 rounded-full;
   }
 
   .hero__title {
@@ -552,12 +552,12 @@
 
   /* Badge */
   .badge {
-    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold bg-primary-100 text-primary;
+    @apply inline-block px-3 py-1 rounded-full text-sm font-semibold bg-neutral-100 text-primary;
   }
 
   /* Loading Spinner */
   .spinner {
-    @apply inline-block w-6 h-6 border-3 border-primary-200 border-t-primary rounded-full animate-spin;
+    @apply inline-block w-6 h-6 border-3 border-neutral-300 border-t-primary rounded-full animate-spin;
   }
 }
 
@@ -566,7 +566,7 @@
 @layer utilities {
   /* Gradients */
   .gradient-primary {
-    @apply bg-gradient-to-r from-primary to-primary-700;
+    @apply bg-gradient-to-r from-primary to-primary;
   }
 
   .gradient-accent {
