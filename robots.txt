@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agroguardai.com/sitemap.xml
+
+# Block admin or private paths if added in future
+Disallow: /admin/
+Disallow: /private/

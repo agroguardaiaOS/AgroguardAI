@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroMind - Voice-First AI Chatbot for Farmers | AgroGuardAI</title>
+  <meta name="description" content="AgroMind: A voice-first, multilingual AI chatbot designed for farmers in the field. Real-time crop health advice, offline capability, and local language support.">
+  <meta property="og:title" content="AgroMind - Voice-First AI Chatbot for Farmers">
+  <meta property="og:description" content="Voice-first, multilingual AI chatbot bringing agricultural intelligence to every farmer's pocket.">
+  <meta property="og:image" content="https://agroguardaiaOS.github.io/AgroguardAI/mylogo.png">
+  <meta name="theme-color" content="#00bcd4">
+  <link rel="icon" href="mylogo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index" class="header__logo" aria-label="AgroGuardAI Home">
+        <img src="mylogo.png" alt="AgroGuardAI" class="header__logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="header__logo-icon" style="display:none">AG</span>
+        <span class="header__logo-text">AgroGuardAI</span>
+      </a>
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <div class="header__nav-links">
+          <a href="intelligence" class="header__nav-link">Intelligence</a>
+          <a href="agromind" class="header__nav-link active">AgroMind</a>
+          <a href="agrorobotics" class="header__nav-link">AgroRobotics</a>
+          <a href="api" class="header__nav-link">API</a>
+          <a href="pricing" class="header__nav-link">Pricing</a>
+        </div>
+      </nav>
+      <div class="header__actions">
+        <a href="contact" class="btn btn--secondary btn--sm">Contact</a>
+        <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Open AgroMind</a>
+      </div>
+      <button class="header__mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="intelligence" class="mobile-menu__link">Intelligence</a>
+    <a href="agromind" class="mobile-menu__link">AgroMind</a>
+    <a href="agrorobotics" class="mobile-menu__link">AgroRobotics</a>
+    <a href="api" class="mobile-menu__link">API</a>
+    <a href="pricing" class="mobile-menu__link">Pricing</a>
+    <a href="contact" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__actions">
+      <a href="contact" class="btn btn--secondary">Contact</a>
+      <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--primary">Open AgroMind</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero hero--product">
+    <div class="container">
+      <div class="hero__content animate-on-scroll">
+        <div class="hero__label">
+          <span style="width:8px;height:8px;background:var(--color-secondary-400);border-radius:50%;display:inline-block;"></span>
+          Mobile Application
+        </div>
+        <h1 class="hero__title">AgroMind</h1>
+        <p class="hero__subtitle">A voice-first, multilingual AI chatbot designed for the field. Farmers can ask questions in their local language, get instant crop health advice, and receive actionable treatment recommendations—all offline if needed.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Launch AgroMind</a>
+          <a href="pricing" class="btn btn--outline-white btn--lg">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Interface</span>
+        <h2 class="section-title">Designed for the Field</h2>
+        <p class="section-subtitle">Simple, intuitive interface optimized for farmers on mobile devices with limited connectivity.</p>
+      </div>
+      <div style="max-width:500px;margin:var(--space-12) auto 0;text-align:center;display:flex;justify-content:center;">
+        <img src="agromind-mockup.jpg" alt="AgroMind mobile app interface showing account creation and authentication options" style="max-width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Built for Real Farming Challenges</h2>
+        <p class="section-subtitle">Every feature designed with field conditions and farmer needs in mind.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Voice-First Interface</h3>
+          <p class="card__desc">Ask questions by voice in your local language. AgroMind understands accents, dialects, and context. Get answers in seconds.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Multilingual Support</h3>
+          <p class="card__desc">Communicate in Hausa, Yoruba, Igbo, Swahili, English, and more. Responses tailored to local farming practices and regional crop varieties.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Offline Capability</h3>
+          <p class="card__desc">Works without internet connection. Download crop knowledge locally. Sync data when connectivity is available.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Photo Diagnosis</h3>
+          <p class="card__desc">Take a photo of a diseased leaf or pest damage. AgroMind identifies the problem and recommends treatment options instantly.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Treatment Plans</h3>
+          <p class="card__desc">Get step-by-step treatment instructions with dosages, timing, and cost estimates. Optimize for budget or effectiveness.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Weather Integration</h3>
+          <p class="card__desc">Real-time weather data informs recommendations. Know when to spray, irrigate, or harvest based on forecasts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Use Cases</span>
+        <h2 class="section-title">Empowering Farmers Everywhere</h2>
+        <p class="section-subtitle">From smallholder plots to commercial operations, AgroMind adapts to your farming scale.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Disease Diagnosis</h3>
+          <p class="card__desc">Identify crop diseases early. Get treatment recommendations before losses escalate. Reduce crop loss by 40% or more.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Pest Management</h3>
+          <p class="card__desc">Detect pest infestations at early stages. Receive targeted control strategies with minimal chemical use.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Nutrient Guidance</h3>
+          <p class="card__desc">Get personalized fertilizer recommendations based on soil type, crop stage, and weather. Optimize nutrient spending.</p>
+        </div>
+        <div class="card animate-on-scroll">
+          <h3 class="card__title">Harvest Planning</h3>
+          <p class="card__desc">Know the optimal harvest window. Predict yield and quality. Plan storage and market timing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-label">Technology</span>
+        <h2 class="section-title" style="color:var(--color-text-on-dark);">Built on AgroGuard Intelligence</h2>
+        <p class="section-subtitle">Powered by the same foundation model that drives all AgroGuardAI products.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card animate-on-scroll" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--color-text-on-dark);">Advanced NLP</h3>
+          <p class="card__desc" style="color:var(--color-text-on-dark);opacity:0.85;">Understands context, local idioms, and farming terminology. Provides nuanced, culturally-relevant responses.</p>
+        </div>
+        <div class="card animate-on-scroll" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--color-text-on-dark);">Computer Vision</h3>
+          <p class="card__desc" style="color:var(--color-text-on-dark);opacity:0.85;">Analyzes crop images with 94% accuracy. Identifies diseases, pests, and nutrient deficiencies instantly.</p>
+        </div>
+        <div class="card animate-on-scroll" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--color-text-on-dark);">Real-Time Sync</h3>
+          <p class="card__desc" style="color:var(--color-text-on-dark);opacity:0.85;">Seamlessly syncs with cloud when connected. Maintains local knowledge base for offline use.</p>
+        </div>
+        <div class="card animate-on-scroll" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
+          <h3 class="card__title" style="color:var(--color-text-on-dark);">Privacy-First</h3>
+          <p class="card__desc" style="color:var(--color-text-on-dark);opacity:0.85;">Your farm data stays yours. Encrypted end-to-end. No data sold or shared with third parties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center animate-on-scroll" style="max-width:700px;margin-left:auto;margin-right:auto;">
+        <h2 class="section-title">Start Using AgroMind Today</h2>
+        <p class="section-subtitle">Available on iOS and Android. Free tier includes unlimited crop diagnostics and treatment recommendations.</p>
+        <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);">
+          <a href="https://agromind.chat" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Launch AgroMind</a>
+          <a href="contact" class="btn btn--outline btn--lg">Get Support</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="header__logo" style="display:flex; align-items:center; gap:var(--space-2);">
+            <img src="mylogo.png" alt="AgroGuardAI Logo" style="height: 32px; width: auto;" />
+            <span>AgroGuardAI</span>
+          </a>
+          <p class="footer__brand-desc">The intelligence layer for global agriculture. One AI ecosystem powering every farm, everywhere.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Products</h4>
+          <a href="intelligence" class="footer__link">AgroGuard Intelligence</a>
+          <a href="agromind" class="footer__link">AgroMind</a>
+          <a href="agrorobotics" class="footer__link">AgroRobotics</a>
+          <a href="api" class="footer__link">API Docs</a>
+          <a href="pricing" class="footer__link">Pricing</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <a href="contact" class="footer__link">Contact</a>
+          <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
+          <a href="#" class="footer__link">Status</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <a href="privacy" class="footer__link">Privacy Policy</a>
+          <a href="terms" class="footer__link">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 AgroGuardAI. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="https://x.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://instagram.com/AgroguardAI" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="https://github.com/agroguardaiaOS" target="_blank" rel="noopener" aria-label="GitHub Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
