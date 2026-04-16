@@ -141,11 +141,25 @@
     isAnnual = !isAnnual;
     toggle.classList.toggle('active', isAnnual);
 
+    // Update toggle switch position
+    const switchSpan = toggle.querySelector('span');
+    if (switchSpan) {
+      switchSpan.style.left = isAnnual ? '30px' : '2px';
+    }
+
+    // Update toggle background
+    toggle.style.background = isAnnual ? 'var(--color-primary-500)' : 'var(--color-neutral-300)';
+
     if (monthlyLabel) monthlyLabel.classList.toggle('active', !isAnnual);
     if (annualLabel) annualLabel.classList.toggle('active', isAnnual);
 
+    if (monthlyLabel) monthlyLabel.style.fontWeight = isAnnual ? '500' : '600';
+    if (monthlyLabel) monthlyLabel.style.color = isAnnual ? 'var(--color-text-secondary)' : 'var(--color-text-primary)';
+    if (annualLabel) annualLabel.style.fontWeight = isAnnual ? '600' : '500';
+    if (annualLabel) annualLabel.style.color = isAnnual ? 'var(--color-text-primary)' : 'var(--color-text-secondary)';
+
     prices.forEach(el => {
-      el.textContent = isAnnual ? el.dataset.annual : el.dataset.monthly;
+      el.textContent = isAnnual ? '$' + el.dataset.annual : '$' + el.dataset.monthly;
     });
 
     document.querySelectorAll('[data-period-label]').forEach(el => {
@@ -202,7 +216,7 @@
 
 /**
  * Contact Form Submission
- * Handles form submission with validation and feedback
+ * Handles form submission with Formspree integration
  */
 (function initContactForm() {
   const form = document.querySelector('#contact-form');
@@ -220,24 +234,40 @@
     }
 
     try {
-      // Simulate API call (replace with real endpoint)
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      // Collect form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
 
-      // Show success message
-      form.innerHTML = `
-        <div style="text-align:center;padding:var(--space-12) var(--space-4);">
-          <div style="width:64px;height:64px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-600)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-          </div>
-          <h3 style="color:var(--color-text-primary);margin-bottom:var(--space-2);font-size:var(--font-size-xl);">Message Sent</h3>
-          <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);">Thanks for reaching out — we'll get back to you within 24 hours.</p>
-        </div>`;
+      // Send to Formspree endpoint for agroguardai1@gmail.com
+      const response = await fetch('https://formspree.io/f/agroguardai1@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        // Show success message
+        form.innerHTML = `
+          <div style="text-align:center;padding:var(--space-12) var(--space-4);">
+            <div style="width:64px;height:64px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-600)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+            </div>
+            <h3 style="color:var(--color-text-primary);margin-bottom:var(--space-2);font-size:var(--font-size-xl);">Message Sent</h3>
+            <p style="color:var(--color-text-muted);font-size:var(--font-size-sm);">Thanks for reaching out — we'll get back to you within 24 hours.</p>
+          </div>`;
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       if (btn) {
         btn.textContent = originalText;
         btn.disabled = false;
       }
+      alert('Failed to send message. Please try again or contact us directly.');
     }
   });
 })();
@@ -285,6 +315,77 @@
   }, { threshold: 0.5 });
 
   statElements.forEach(el => observer.observe(el));
+})();
+
+/**
+ * Photo Upload Handler
+ * Handles image uploads for crop diagnosis
+ */
+(function initPhotoUpload() {
+  const uploadInput = document.querySelector('#photo-upload');
+  const uploadPreview = document.querySelector('#upload-preview');
+  const uploadBtn = document.querySelector('#upload-btn');
+
+  if (!uploadInput || !uploadPreview) return;
+
+  uploadInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      alert('Please select a valid image file');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      alert('File size must be less than 5MB');
+      return;
+    }
+
+    // Read and display preview
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      uploadPreview.innerHTML = `
+        <img src="${event.target.result}" alt="Preview" style="max-width:100%;border-radius:var(--radius-lg);margin-bottom:var(--space-4);">
+        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);">Ready to analyze</p>
+      `;
+      if (uploadBtn) uploadBtn.disabled = false;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Handle upload button click
+  if (uploadBtn) {
+    uploadBtn.addEventListener('click', async () => {
+      const file = uploadInput.files[0];
+      if (!file) return;
+
+      uploadBtn.textContent = 'Analyzing...';
+      uploadBtn.disabled = true;
+
+      try {
+        // Simulate analysis (replace with real API call)
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        uploadPreview.innerHTML = `
+          <div style="text-align:center;padding:var(--space-8);">
+            <div style="width:64px;height:64px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-600)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+            </div>
+            <h4 style="color:var(--color-text-primary);margin-bottom:var(--space-2);">Analysis Complete</h4>
+            <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);">Disease detected: Early Blight<br>Confidence: 94%<br><br><strong>Recommendation:</strong> Apply fungicide treatment within 48 hours</p>
+          </div>
+        `;
+      } catch (error) {
+        console.error('Upload error:', error);
+        uploadBtn.textContent = 'Try Again';
+        uploadBtn.disabled = false;
+        alert('Analysis failed. Please try again.');
+      }
+    });
+  }
 })();
 
 /**

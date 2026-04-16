@@ -8,7 +8,11 @@
   <meta property="og:title" content="Pricing | AgroGuardAI">
   <meta property="og:description" content="Simple, transparent pricing for agricultural AI solutions.">
   <meta property="og:image" content="https://agroguardaiaOS.github.io/AgroguardAI/mylogo.png">
-  <meta name="theme-color" content="#4caf50">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing | AgroGuardAI">
+  <meta name="twitter:description" content="Simple, transparent pricing for agricultural AI solutions.">
+  <meta name="theme-color" content="#10B981">
+  <link rel="canonical" href="https://agroguardai.com/pricing">
   <link rel="icon" href="mylogo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +85,15 @@
         <p class="section-subtitle">All plans include access to AgroGuard Intelligence, AgroMind, and core features.</p>
       </div>
 
+      <!-- Pricing Toggle -->
+      <div style="display:flex;justify-content:center;align-items:center;gap:var(--space-4);margin-bottom:var(--space-12);margin-top:var(--space-8);">
+        <span data-period="monthly" class="active" style="font-weight:600;color:var(--color-text-primary);">Monthly</span>
+        <button class="pricing-toggle__switch" style="position:relative;width:60px;height:32px;background:var(--color-neutral-300);border:none;border-radius:var(--radius-full);cursor:pointer;transition:background 0.3s ease;">
+          <span style="position:absolute;top:2px;left:2px;width:28px;height:28px;background:white;border-radius:50%;transition:left 0.3s ease;box-shadow:var(--shadow-sm);"></span>
+        </button>
+        <span data-period="annual" style="font-weight:500;color:var(--color-text-secondary);">Annual <span style="background:var(--color-primary-100);color:var(--color-primary-700);padding:var(--space-1) var(--space-2);border-radius:var(--radius-sm);font-size:var(--font-size-xs);margin-left:var(--space-2);">Save 20%</span></span>
+      </div>
+
       <div class="pricing-grid">
         <!-- Free Plan -->
         <div class="pricing-card animate-on-scroll">
@@ -124,8 +137,8 @@
           <div class="pricing-card__badge">Most Popular</div>
           <h3 class="pricing-card__name">Pro</h3>
           <div class="pricing-card__price">
-            <span class="pricing-card__amount">$10</span>
-            <span class="pricing-card__period">/month</span>
+            <span class="pricing-card__amount" data-monthly="10" data-annual="96">$10</span>
+            <span class="pricing-card__period" data-period-label="/month">/month</span>
           </div>
           <p class="pricing-card__desc">For serious farmers and small enterprises.</p>
           <ul class="pricing-card__features">
@@ -257,7 +270,7 @@
           <h4 class="footer__heading">Company</h4>
           <a href="contact" class="footer__link">Contact</a>
           <a href="https://medium.com/@agroguardai" target="_blank" rel="noopener" class="footer__link">Blog</a>
-          <a href="#" class="footer__link">Status</a>
+          
         </div>
         <div>
           <h4 class="footer__heading">Legal</h4>
