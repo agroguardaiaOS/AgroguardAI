@@ -238,8 +238,9 @@
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
 
-      // Send to Formspree endpoint for agroguardai1@gmail.com
-      const response = await fetch('https://formspree.io/f/agroguardai1@gmail.com', {
+      // Use environment variable or proxy to backend to prevent exposing the Formspree endpoint
+      const endpoint = (window.ENV && window.ENV.FORMSPREE_ENDPOINT) ? window.ENV.FORMSPREE_ENDPOINT : '/api/contact';
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
