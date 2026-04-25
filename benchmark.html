@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .animate-on-scroll { height: 10px; width: 10px; }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    const container = document.getElementById('container');
+    for (let i = 0; i < 50; i++) {
+      const parent = document.createElement('div');
+      parent.className = 'parent';
+      for (let j = 0; j < 50; j++) {
+        const child = document.createElement('div');
+        child.className = 'animate-on-scroll';
+        parent.appendChild(child);
+      }
+      container.appendChild(parent);
+    }
+  </script>
+  <script src="main.js"></script>
+  <script>
+    // Simulate intersection observer callback performance
+    const elements = Array.from(document.querySelectorAll('.animate-on-scroll'));
+
+    // We can directly mock the entries and see how long it takes for the callback to run.
+    const entries = elements.map(el => ({
+      target: el,
+      isIntersecting: true
+    }));
+
+    // Wait, the main.js file initializes the IntersectionObserver but we can't easily trigger it without scrolling.
+    // Let's copy the logic to a pure JS benchmark.
+  </script>
+</body>
+</html>
