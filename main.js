@@ -44,12 +44,13 @@
   toggle.addEventListener('click', toggleMenu);
 
   // Close menu when a link is clicked
-  menu.querySelectorAll('a').forEach(link => {
+  menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       menu.classList.remove('active');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      toggle.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+      toggle.innerHTML =
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
     });
   });
 })();
@@ -62,7 +63,7 @@
   const links = document.querySelectorAll('.header__nav-link');
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-  links.forEach(link => {
+  links.forEach((link) => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
@@ -78,23 +79,30 @@
   const elements = document.querySelectorAll('.animate-on-scroll');
   if (!elements.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Stagger animation for sibling elements
-        const siblings = Array.from(entry.target.parentElement.querySelectorAll('.animate-on-scroll:not(.visible)'));
-        const index = siblings.indexOf(entry.target);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Stagger animation for sibling elements
+          const siblings = Array.from(
+            entry.target.parentElement.querySelectorAll(
+              '.animate-on-scroll:not(.visible)',
+            ),
+          );
+          const index = siblings.indexOf(entry.target);
 
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 80);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 80);
 
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+  );
 
-  elements.forEach(el => observer.observe(el));
+  elements.forEach((el) => observer.observe(el));
 })();
 
 /**
@@ -102,17 +110,17 @@
  * Manages tabbed content sections
  */
 (function initTabs() {
-  document.querySelectorAll('[data-tabs]').forEach(container => {
+  document.querySelectorAll('[data-tabs]').forEach((container) => {
     const tabs = container.querySelectorAll('.tab');
     const panels = container.querySelectorAll('.tab-panel');
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const targetPanel = tab.dataset.tab;
 
         // Deactivate all tabs and panels
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
+        tabs.forEach((t) => t.classList.remove('active'));
+        panels.forEach((p) => p.classList.remove('active'));
 
         // Activate selected tab and panel
         tab.classList.add('active');
@@ -148,21 +156,31 @@
     }
 
     // Update toggle background
-    toggle.style.background = isAnnual ? 'var(--color-primary-500)' : 'var(--color-neutral-300)';
+    toggle.style.background = isAnnual
+      ? 'var(--color-primary-500)'
+      : 'var(--color-neutral-300)';
 
     if (monthlyLabel) monthlyLabel.classList.toggle('active', !isAnnual);
     if (annualLabel) annualLabel.classList.toggle('active', isAnnual);
 
     if (monthlyLabel) monthlyLabel.style.fontWeight = isAnnual ? '500' : '600';
-    if (monthlyLabel) monthlyLabel.style.color = isAnnual ? 'var(--color-text-secondary)' : 'var(--color-text-primary)';
+    if (monthlyLabel)
+      monthlyLabel.style.color = isAnnual
+        ? 'var(--color-text-secondary)'
+        : 'var(--color-text-primary)';
     if (annualLabel) annualLabel.style.fontWeight = isAnnual ? '600' : '500';
-    if (annualLabel) annualLabel.style.color = isAnnual ? 'var(--color-text-primary)' : 'var(--color-text-secondary)';
+    if (annualLabel)
+      annualLabel.style.color = isAnnual
+        ? 'var(--color-text-primary)'
+        : 'var(--color-text-secondary)';
 
-    prices.forEach(el => {
-      el.textContent = isAnnual ? '$' + el.dataset.annual : '$' + el.dataset.monthly;
+    prices.forEach((el) => {
+      el.textContent = isAnnual
+        ? '$' + el.dataset.annual
+        : '$' + el.dataset.monthly;
     });
 
-    document.querySelectorAll('[data-period-label]').forEach(el => {
+    document.querySelectorAll('[data-period-label]').forEach((el) => {
       el.textContent = isAnnual ? '/yr' : '/mo';
     });
   });
@@ -173,7 +191,7 @@
  * Allows users to copy code snippets to clipboard
  */
 (function initCodeCopy() {
-  document.querySelectorAll('.code-block__copy').forEach(btn => {
+  document.querySelectorAll('.code-block__copy').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const pre = btn.closest('.code-block').querySelector('pre');
       if (!pre) return;
@@ -201,7 +219,7 @@
  * Provides smooth scrolling to page sections
  */
 (function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
       const target = document.querySelector(targetId);
@@ -239,14 +257,17 @@
       const data = Object.fromEntries(formData);
 
       // Send to Formspree endpoint for agroguardai1@gmail.com
-      const response = await fetch('https://formspree.io/f/agroguardai1@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+      const response = await fetch(
+        'https://formspree.io/f/agroguardai1@gmail.com',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data)
-      });
+      );
 
       if (response.ok) {
         // Show success message
@@ -277,7 +298,9 @@
  * Animates numeric counters when they come into view
  */
 (function initStatCounters() {
-  const statElements = document.querySelectorAll('.stat-block__number[data-count]');
+  const statElements = document.querySelectorAll(
+    '.stat-block__number[data-count]',
+  );
   if (!statElements.length) return;
 
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
@@ -293,7 +316,9 @@
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const value = target * easeOut(progress);
-      const display = Number.isInteger(target) ? Math.floor(value) : value.toFixed(1);
+      const display = Number.isInteger(target)
+        ? Math.floor(value)
+        : value.toFixed(1);
 
       el.textContent = prefix + display + suffix;
 
@@ -305,16 +330,19 @@
     requestAnimationFrame(update);
   }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-  statElements.forEach(el => observer.observe(el));
+  statElements.forEach((el) => observer.observe(el));
 })();
 
 /**
@@ -347,10 +375,23 @@
     // Read and display preview
     const reader = new FileReader();
     reader.onload = (event) => {
-      uploadPreview.innerHTML = `
-        <img src="${event.target.result}" alt="Preview" style="max-width:100%;border-radius:var(--radius-lg);margin-bottom:var(--space-4);">
-        <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);">Ready to analyze</p>
-      `;
+      uploadPreview.textContent = '';
+
+      const img = document.createElement('img');
+      img.src = event.target.result;
+      img.alt = 'Preview';
+      img.style.maxWidth = '100%';
+      img.style.borderRadius = 'var(--radius-lg)';
+      img.style.marginBottom = 'var(--space-4)';
+
+      const p = document.createElement('p');
+      p.style.color = 'var(--color-text-secondary)';
+      p.style.fontSize = 'var(--font-size-sm)';
+      p.textContent = 'Ready to analyze';
+
+      uploadPreview.appendChild(img);
+      uploadPreview.appendChild(p);
+
       if (uploadBtn) uploadBtn.disabled = false;
     };
     reader.readAsDataURL(file);
@@ -367,17 +408,55 @@
 
       try {
         // Simulate analysis (replace with real API call)
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
 
-        uploadPreview.innerHTML = `
-          <div style="text-align:center;padding:var(--space-8);">
-            <div style="width:64px;height:64px;background:var(--color-primary-50);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-4);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-600)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
-            </div>
-            <h4 style="color:var(--color-text-primary);margin-bottom:var(--space-2);">Analysis Complete</h4>
-            <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);">Disease detected: Early Blight<br>Confidence: 94%<br><br><strong>Recommendation:</strong> Apply fungicide treatment within 48 hours</p>
-          </div>
-        `;
+        uploadPreview.textContent = '';
+
+        const container = document.createElement('div');
+        container.style.textAlign = 'center';
+        container.style.padding = 'var(--space-8)';
+
+        const iconContainer = document.createElement('div');
+        iconContainer.style.width = '64px';
+        iconContainer.style.height = '64px';
+        iconContainer.style.background = 'var(--color-primary-50)';
+        iconContainer.style.borderRadius = '50%';
+        iconContainer.style.display = 'flex';
+        iconContainer.style.alignItems = 'center';
+        iconContainer.style.justifyContent = 'center';
+        iconContainer.style.margin = '0 auto var(--space-4)';
+        iconContainer.innerHTML =
+          '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-600)" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>';
+
+        const h4 = document.createElement('h4');
+        h4.style.color = 'var(--color-text-primary)';
+        h4.style.marginBottom = 'var(--space-2)';
+        h4.textContent = 'Analysis Complete';
+
+        const p = document.createElement('p');
+        p.style.color = 'var(--color-text-secondary)';
+        p.style.fontSize = 'var(--font-size-sm)';
+
+        p.appendChild(
+          document.createTextNode('Disease detected: Early Blight'),
+        );
+        p.appendChild(document.createElement('br'));
+        p.appendChild(document.createTextNode('Confidence: 94%'));
+        p.appendChild(document.createElement('br'));
+        p.appendChild(document.createElement('br'));
+
+        const strong = document.createElement('strong');
+        strong.textContent = 'Recommendation:';
+        p.appendChild(strong);
+        p.appendChild(
+          document.createTextNode(' Apply fungicide treatment within 48 hours'),
+        );
+
+        container.appendChild(iconContainer);
+        container.appendChild(h4);
+        container.appendChild(p);
+
+        uploadPreview.appendChild(container);
       } catch (error) {
         console.error('Upload error:', error);
         uploadBtn.textContent = 'Try Again';
