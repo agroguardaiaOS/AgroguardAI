@@ -134,6 +134,7 @@
   const monthlyLabel = document.querySelector('[data-period="monthly"]');
   const annualLabel = document.querySelector('[data-period="annual"]');
   const prices = document.querySelectorAll('[data-monthly]');
+  const periodLabels = document.querySelectorAll('[data-period-label]');
 
   let isAnnual = false;
 
@@ -162,7 +163,7 @@
       el.textContent = isAnnual ? '$' + el.dataset.annual : '$' + el.dataset.monthly;
     });
 
-    document.querySelectorAll('[data-period-label]').forEach(el => {
+    periodLabels.forEach(el => {
       el.textContent = isAnnual ? '/yr' : '/mo';
     });
   });
