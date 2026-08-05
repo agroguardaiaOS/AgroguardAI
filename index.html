@@ -32,6 +32,9 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         /* Top Bar */
@@ -62,6 +65,7 @@
             max-width: 640px;
             margin: 60px auto auto;
             padding: 0 24px 60px;
+            flex: 1;
         }
 
         h1 {
@@ -142,6 +146,14 @@
                 justify-content: center;
             }
         }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
     </style>
 </head>
 <body>
@@ -157,7 +169,7 @@
         <div class="section">
             <h2>Research Focus</h2>
             <p>Advancing open-source artificial intelligence to secure global food systems. Our research focuses strictly on AI safety, alignment, and hallucination mitigation.</p>
-            <p>We are actively evaluating foundation models in local agricultural dialects (Hausa, Yoruba, Igbo, Fulfulde) to ensure safe, factual, and deterministic outputs for high-stakes environments.</p>
+            <p>We are evaluating foundation models across diverse global languages and regional dialects, ensuring safe, factual, and deterministic outputs for high-stakes agricultural environments worldwide.</p>
         </div>
 
         <div class="notice">
@@ -180,5 +192,10 @@
         </div>
     </div>
 
+    <footer>
+        &copy; 2026 AgroGuardAI Research. Open Source.
+    </footer>
+
 </body>
-</html>
+        </html>
+        
